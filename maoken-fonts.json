@@ -1,0 +1,807 @@
+{
+ "generatedAt": "2026-09-10 00:19:54",
+ "total": 100,
+ "source": "https://www.maoken.com/all-fonts",
+ "fonts": [
+  {
+   "name": "耀圆体",
+   "series": "feiyangjun",
+   "author": "feiyangjun",
+   "version": "1.001(2026/08/31)",
+   "date": "2026年08月",
+   "url": "https://www.maoken.com/freefonts/29170.html"
+  },
+  {
+   "name": "字库星球免费体",
+   "series": "字库星球",
+   "author": "字库星球",
+   "version": "1.000(2026/08/21)",
+   "date": "2026年08月",
+   "url": "https://www.maoken.com/freefonts/29047.html"
+  },
+  {
+   "name": "字库星球飞扬体",
+   "series": "字库星球",
+   "author": "字库星球",
+   "version": "2.00(2026/03/26)",
+   "date": "2025年02月",
+   "url": "https://www.maoken.com/freefonts/24955.html"
+  },
+  {
+   "name": "字库江湖古风体",
+   "series": "字库星球",
+   "author": "字库星球",
+   "version": "1.00(2024/12/31)",
+   "date": "2024年12月",
+   "url": "https://www.maoken.com/freefonts/24675.html"
+  },
+  {
+   "name": "云峰晶晶体",
+   "series": "云峰字库",
+   "author": "云峰字库",
+   "version": "2.000(2026/08/07)",
+   "date": "2026年08月",
+   "url": "https://www.maoken.com/freefonts/28904.html"
+  },
+  {
+   "name": "云峰林桥体",
+   "series": "云峰字库",
+   "author": "云峰字库",
+   "version": "1.00(2024/12/30)",
+   "date": "2024年12月",
+   "url": "https://www.maoken.com/freefonts/24643.html"
+  },
+  {
+   "name": "她屿山海",
+   "series": "云峰字库",
+   "author": "云峰字库",
+   "version": "1.00(2024/12/25)",
+   "date": "2024年12月",
+   "url": "https://www.maoken.com/freefonts/24632.html"
+  },
+  {
+   "name": "云峰游戏标题简体",
+   "series": "云峰字库",
+   "author": "云峰字库",
+   "version": "2.00(2025/02/10)",
+   "date": "2024年11月",
+   "url": "https://www.maoken.com/freefonts/24819.html"
+  },
+  {
+   "name": "重庆山城棒棒体",
+   "series": "云峰字库",
+   "author": "云峰字库",
+   "version": "3.00(2025/01/03)",
+   "date": "2024年07月",
+   "url": "https://www.maoken.com/freefonts/22374.html"
+  },
+  {
+   "name": "云峰寒蝉体",
+   "series": "云峰字库",
+   "author": "云峰字库",
+   "version": "2.00(2024/12/26)",
+   "date": "2023年03月",
+   "url": "https://www.maoken.com/freefonts/18085.html"
+  },
+  {
+   "name": "云峰飞云体",
+   "series": "云峰字库",
+   "author": "云峰字库",
+   "version": "1.00 (2024/12/26)",
+   "date": "2022年07月",
+   "url": "https://www.maoken.com/freefonts/16607.html"
+  },
+  {
+   "name": "云峰静龙行书",
+   "series": "云峰字库",
+   "author": "云峰字库",
+   "version": "1.00(2024/12/27)",
+   "date": "2022年06月",
+   "url": "https://www.maoken.com/freefonts/16178.html"
+  },
+  {
+   "name": "赖江湖墨暖圆书",
+   "series": "赖江湖",
+   "author": "赖江湖",
+   "version": "1.00(2026/07/23)",
+   "date": "2026年07月",
+   "url": "https://www.maoken.com/freefonts/28859.html"
+  },
+  {
+   "name": "武汉英雄体",
+   "series": "字绘中国",
+   "author": "徐郑冰教授团队",
+   "version": "3.100(2026/07/28)",
+   "date": "2026年07月",
+   "url": "https://www.maoken.com/freefonts/28479.html"
+  },
+  {
+   "name": "法华文楷",
+   "series": "文徵字库",
+   "author": "文徵字库",
+   "version": "1.000(2026/04/26)",
+   "date": "2026年04月",
+   "url": "https://www.maoken.com/freefonts/27861.html"
+  },
+  {
+   "name": "卓特自由体",
+   "series": "卓特视觉",
+   "author": "卓特视觉",
+   "version": "1.000(2026/04/14)",
+   "date": "2026年04月",
+   "url": "https://www.maoken.com/freefonts/27800.html"
+  },
+  {
+   "name": "卓特悦动黑",
+   "series": "卓特视觉",
+   "author": "卓特视觉",
+   "version": "1.000(2026/04/14)",
+   "date": "2026年04月",
+   "url": "https://www.maoken.com/freefonts/27791.html"
+  },
+  {
+   "name": "卓特清雅体",
+   "series": "卓特视觉",
+   "author": "卓特视觉",
+   "version": "1.000(2026/04/14)",
+   "date": "2026年04月",
+   "url": "https://www.maoken.com/freefonts/27782.html"
+  },
+  {
+   "name": "朝华标题",
+   "series": "特里王系列",
+   "author": "特里王",
+   "version": "1.001(2026/08/16)",
+   "date": "2026年03月",
+   "url": "https://www.maoken.com/freefonts/27668.html"
+  },
+  {
+   "name": "油茶馓子体",
+   "series": "特里王系列",
+   "author": "特里王",
+   "version": "1.000(2026/03/16)",
+   "date": "2026年03月",
+   "url": "https://www.maoken.com/freefonts/27691.html"
+  },
+  {
+   "name": "迫真打字油印体",
+   "series": "特里王系列",
+   "author": "特里王",
+   "version": "1.000(2026/03/16)",
+   "date": "2026年03月",
+   "url": "https://www.maoken.com/freefonts/27686.html"
+  },
+  {
+   "name": "朝华打字机",
+   "series": "特里王系列",
+   "author": "特里王",
+   "version": "1.000(2026/03/16)",
+   "date": "2026年03月",
+   "url": "https://www.maoken.com/freefonts/27677.html"
+  },
+  {
+   "name": "汇文港黑",
+   "series": "特里王系列",
+   "author": "特里王",
+   "version": "1.01(2024/12/18)",
+   "date": "2024年12月",
+   "url": "https://www.maoken.com/freefonts/24525.html"
+  },
+  {
+   "name": "汇文正楷",
+   "series": "特里王系列",
+   "author": "特里王",
+   "version": "1.01(2024/12/18)",
+   "date": "2024年12月",
+   "url": "https://www.maoken.com/freefonts/24506.html"
+  },
+  {
+   "name": "汇文仿宋",
+   "series": "特里王系列",
+   "author": "特里王",
+   "version": "1.002(2026/03/15)",
+   "date": "2024年12月",
+   "url": "https://www.maoken.com/freefonts/24495.html"
+  },
+  {
+   "name": "京华老宋体",
+   "series": "特里王系列",
+   "author": " 特里王",
+   "version": "3.0(2025/06/11)",
+   "date": "2023年07月",
+   "url": "https://www.maoken.com/freefonts/19417.html"
+  },
+  {
+   "name": "汇文明朝体GBK",
+   "series": "特里王系列",
+   "author": "特里王",
+   "version": "1.001(2024/12/18)",
+   "date": "2021年01月",
+   "url": "https://www.maoken.com/freefonts/9288.html"
+  },
+  {
+   "name": "汇文筑地五号明朝体",
+   "series": "特里王系列",
+   "author": "特里王",
+   "version": "0.90 (2019/06/20)",
+   "date": "2019年06月",
+   "url": "https://www.maoken.com/freefonts/4619.html"
+  },
+  {
+   "name": "小城拉风体",
+   "series": "小城字库",
+   "author": "小城字库",
+   "version": "1.000(2026/03/15)",
+   "date": "2026年03月",
+   "url": "https://www.maoken.com/freefonts/27663.html"
+  },
+  {
+   "name": "乐米小奶泡体",
+   "series": "乐米字体",
+   "author": "乐米字体",
+   "version": "1.000(2026/02/28)",
+   "date": "2026年02月",
+   "url": "https://www.maoken.com/freefonts/27620.html"
+  },
+  {
+   "name": "乐米元气团团体",
+   "series": "乐米字体",
+   "author": "乐米字体",
+   "version": "1.003(2026/02/28)",
+   "date": "2026年02月",
+   "url": "https://www.maoken.com/freefonts/27618.html"
+  },
+  {
+   "name": "乐米像素体",
+   "series": "乐米字体",
+   "author": "乐米字体",
+   "version": "1.001(2026/01/16)",
+   "date": "2026年01月",
+   "url": "https://www.maoken.com/freefonts/27524.html"
+  },
+  {
+   "name": "乐米波波体",
+   "series": "乐米字体",
+   "author": "乐米字体",
+   "version": "1.001 (2026/01/16)",
+   "date": "2026年01月",
+   "url": "https://www.maoken.com/freefonts/27515.html"
+  },
+  {
+   "name": "乐米小雨体",
+   "series": "乐米字体",
+   "author": "乐米字体",
+   "version": "1.000(2026/01/16)",
+   "date": "2026年01月",
+   "url": "https://www.maoken.com/freefonts/27512.html"
+  },
+  {
+   "name": "乐米蜡笔体",
+   "series": "乐米字体",
+   "author": "乐米",
+   "version": "1.003(2026/01/16)",
+   "date": "2026年01月",
+   "url": "https://www.maoken.com/freefonts/27496.html"
+  },
+  {
+   "name": "乐米惠圆体",
+   "series": "乐米字体",
+   "author": "乐米",
+   "version": "1.002(2026/01/16)",
+   "date": "2026年01月",
+   "url": "https://www.maoken.com/freefonts/27494.html"
+  },
+  {
+   "name": "敬峰中山王篆",
+   "series": "刘敬峰",
+   "author": "刘敬峰",
+   "version": "3.5(2026/07/08)",
+   "date": "2026年01月",
+   "url": "https://www.maoken.com/freefonts/27589.html"
+  },
+  {
+   "name": "长城共享体",
+   "series": "长城汽车",
+   "author": "长城汽车 X 蒙纳字库",
+   "version": "1.00(2026/01/08)",
+   "date": "2026年01月",
+   "url": "https://www.maoken.com/freefonts/27560.html"
+  },
+  {
+   "name": "鸿雷板书繁体",
+   "series": "鸿雷字记",
+   "author": "鸿雷字记",
+   "version": "3.001(2026/04/29)",
+   "date": "2026年01月",
+   "url": "https://www.maoken.com/freefonts/27440.html"
+  },
+  {
+   "name": "鸿雷小纸条青春体",
+   "series": "鸿雷字记",
+   "author": "鸿雷字记",
+   "version": "2.001(2026/06/29)",
+   "date": "2025年09月",
+   "url": "https://www.maoken.com/freefonts/26753.html"
+  },
+  {
+   "name": "鸿雷拙书简体",
+   "series": "鸿雷字记",
+   "author": "鸿雷字记",
+   "version": "1.00(2026/02/10)",
+   "date": "2023年02月",
+   "url": "https://www.maoken.com/freefonts/17746.html"
+  },
+  {
+   "name": "鸿雷行书简体",
+   "series": "鸿雷字记",
+   "author": "鸿雷字记",
+   "version": "1.00(2022/08/24)",
+   "date": "2022年08月",
+   "url": "https://www.maoken.com/freefonts/16904.html"
+  },
+  {
+   "name": "鸿雷板书简体",
+   "series": "鸿雷字记",
+   "author": "鸿雷字记",
+   "version": "3.001(2026/04/29)",
+   "date": "2020年04月",
+   "url": "https://www.maoken.com/freefonts/3791.html"
+  },
+  {
+   "name": "吉利银河美好体",
+   "series": "方正字库",
+   "author": "方正 X 吉利",
+   "version": "1.02(2026/01/14)",
+   "date": "2026年01月",
+   "url": "https://www.maoken.com/freefonts/27423.html"
+  },
+  {
+   "name": "方正甲骨文",
+   "series": "方正字库",
+   "author": "方正",
+   "version": "1.00 (2021/07/02)",
+   "date": "2021年07月",
+   "url": "https://www.maoken.com/freefonts/11743.html"
+  },
+  {
+   "name": "方正书宋",
+   "series": "方正字库",
+   "author": "方正",
+   "version": "5.30 (2020/01/15)\t",
+   "date": "2015年08月",
+   "url": "https://www.maoken.com/freefonts/1857.html"
+  },
+  {
+   "name": "方正楷体",
+   "series": "方正字库",
+   "author": "方正",
+   "version": "5.30 (2020/01/15)",
+   "date": "2015年08月",
+   "url": "https://www.maoken.com/freefonts/1850.html"
+  },
+  {
+   "name": "方正仿宋",
+   "series": "方正字库",
+   "author": "方正",
+   "version": "5.30 (2020/01/15)",
+   "date": "2015年08月",
+   "url": "https://www.maoken.com/freefonts/1841.html"
+  },
+  {
+   "name": "方正黑体",
+   "series": "方正字库",
+   "author": "方正",
+   "version": "6.00 (2020/01/15)",
+   "date": "2015年08月",
+   "url": "https://www.maoken.com/freefonts/1831.html"
+  },
+  {
+   "name": "Z工坊像素圆体 16px",
+   "series": "Astro",
+   "author": "Astro-2539",
+   "version": "_Build_20260501(2026/05/01)",
+   "date": "2025年11月",
+   "url": "https://www.maoken.com/freefonts/27352.html"
+  },
+  {
+   "name": "Z Labs Bitmap",
+   "series": "Astro",
+   "author": "Astro-2539",
+   "version": "Build_20260519 Unified(2026/05/19)",
+   "date": "2025年01月",
+   "url": "https://www.maoken.com/freefonts/27042.html"
+  },
+  {
+   "name": "演示魁本楷",
+   "series": "Keynote研究所",
+   "author": "演示字体",
+   "version": "1.00(2025/11/11)",
+   "date": "2025年11月",
+   "url": "https://www.maoken.com/freefonts/27100.html"
+  },
+  {
+   "name": "演示秋鸿楷",
+   "series": "Keynote研究所",
+   "author": "人生哥 x 叶运鹏",
+   "version": "2.00 (2020/09/24)",
+   "date": "2020年08月",
+   "url": "https://www.maoken.com/freefonts/6094.html"
+  },
+  {
+   "name": "演示夏行楷",
+   "series": "Keynote研究所",
+   "author": "人生哥 x 刘锡栋",
+   "version": "1.00 (2020/08/17)",
+   "date": "2020年08月",
+   "url": "https://www.maoken.com/freefonts/6085.html"
+  },
+  {
+   "name": "演示春风楷",
+   "series": "Keynote研究所",
+   "author": "人生哥 x 徐占海",
+   "version": "1.00(2020/08/17)",
+   "date": "2020年08月",
+   "url": "https://www.maoken.com/freefonts/6073.html"
+  },
+  {
+   "name": "演示悠然小楷",
+   "series": "Keynote研究所",
+   "author": "人生哥 x 孟祥媛",
+   "version": "2.00 (2021/05/25)",
+   "date": "2020年03月",
+   "url": "https://www.maoken.com/freefonts/3521.html"
+  },
+  {
+   "name": "演示佛系体",
+   "series": "Keynote研究所",
+   "author": "人生哥 x 纪国才",
+   "version": "1.00(2020/03/18)",
+   "date": "2020年03月",
+   "url": "https://www.maoken.com/freefonts/3398.html"
+  },
+  {
+   "name": "包参谋慧庭手写体",
+   "series": "包参谋",
+   "author": "包参谋",
+   "version": "2.10(2025/12/15)",
+   "date": "2025年10月",
+   "url": "https://www.maoken.com/freefonts/27213.html"
+  },
+  {
+   "name": "上海摩登体",
+   "series": "汉唐文化",
+   "author": "汉唐文化 X 茉莉字型",
+   "version": "1.000(2025/09/23)",
+   "date": "2025年09月",
+   "url": "https://www.maoken.com/freefonts/26821.html"
+  },
+  {
+   "name": "中华薪火体",
+   "series": "蓝色共鸣",
+   "author": "蓝色共鸣",
+   "version": "1.005(2025/08/20)",
+   "date": "2025年08月",
+   "url": "https://www.maoken.com/freefonts/26796.html"
+  },
+  {
+   "name": "余繁离形体",
+   "series": "余繁系列",
+   "author": "余繁",
+   "version": "1.0(2025/08/01)",
+   "date": "2025年08月",
+   "url": "https://www.maoken.com/freefonts/26308.html"
+  },
+  {
+   "name": "余繁丹青宋",
+   "series": "余繁系列",
+   "author": "余繁",
+   "version": "1.0(2024/06/16)",
+   "date": "2024年06月",
+   "url": "https://www.maoken.com/freefonts/21644.html"
+  },
+  {
+   "name": "余繁细柳体",
+   "series": "余繁系列",
+   "author": "余繁",
+   "version": "1.0(2024/04/18)",
+   "date": "2024年04月",
+   "url": "https://www.maoken.com/freefonts/21132.html"
+  },
+  {
+   "name": "余繁真素体",
+   "series": "余繁系列",
+   "author": "余繁",
+   "version": "1.00(2024/02/08)",
+   "date": "2024年02月",
+   "url": "https://www.maoken.com/freefonts/20807.html"
+  },
+  {
+   "name": "余繁新语",
+   "series": "余繁系列",
+   "author": "余繁\t\t\t",
+   "version": "1.00 (2022/07/20)",
+   "date": "2022年07月",
+   "url": "https://www.maoken.com/freefonts/16751.html"
+  },
+  {
+   "name": "给够钱",
+   "series": "吴杨峰系列",
+   "author": "吴杨峰",
+   "version": "1.00(2026/01/29)",
+   "date": "2025年07月",
+   "url": "https://www.maoken.com/freefonts/26280.html"
+  },
+  {
+   "name": "爱点风雅黑长体",
+   "series": "爱点字库",
+   "author": "爱点字库",
+   "version": "1.00(2026/08/30)",
+   "date": "2025年06月",
+   "url": "https://www.maoken.com/freefonts/26103.html"
+  },
+  {
+   "name": "爱点风雅黑",
+   "series": "爱点字库",
+   "author": "爱点字库",
+   "version": "1.00(2026/08/30)",
+   "date": "2024年10月",
+   "url": "https://www.maoken.com/freefonts/24129.html"
+  },
+  {
+   "name": "甜橙点阵体",
+   "series": "DOUOA系列",
+   "author": "DOUOA",
+   "version": "2.200(2026/08/13)",
+   "date": "2025年06月",
+   "url": "https://www.maoken.com/freefonts/26014.html"
+  },
+  {
+   "name": "呆萌手写体",
+   "series": "K99Xmas系列",
+   "author": "K99Xmas",
+   "version": "2.2(2025/12/23)",
+   "date": "2025年06月",
+   "url": "https://www.maoken.com/freefonts/25915.html"
+  },
+  {
+   "name": "仲春仿宋",
+   "series": "活字攷古",
+   "author": "Hulenkius",
+   "version": "0.16-beta(2025/06/22)",
+   "date": "2025年05月",
+   "url": "https://www.maoken.com/freefonts/25734.html"
+  },
+  {
+   "name": "余思源颜黄体",
+   "series": "余思源系列",
+   "author": "余思源",
+   "version": "2.00(2025/04/22)",
+   "date": "2025年04月",
+   "url": "https://www.maoken.com/freefonts/25629.html"
+  },
+  {
+   "name": "张穸洛浮生楷体",
+   "series": "张穸洛",
+   "author": "图翼网 X 张穸洛",
+   "version": "1.00(2025/03/16)",
+   "date": "2025年03月",
+   "url": "https://www.maoken.com/freefonts/27277.html"
+  },
+  {
+   "name": "张穸洛情书体",
+   "series": "张穸洛",
+   "author": "图翼网 X 张穸洛",
+   "version": "1.00(2025/03/26)",
+   "date": "2025年03月",
+   "url": "https://www.maoken.com/freefonts/27268.html"
+  },
+  {
+   "name": "一品启航体",
+   "series": "一品威客系列",
+   "author": "一品威客",
+   "version": "1.00(2025/03/28)",
+   "date": "2025年03月",
+   "url": "https://www.maoken.com/freefonts/25281.html"
+  },
+  {
+   "name": "一品创享体",
+   "series": "一品威客系列",
+   "author": "一品威客\t",
+   "version": "1.20 (2022/11/15)",
+   "date": "2022年07月",
+   "url": "https://www.maoken.com/freefonts/16505.html"
+  },
+  {
+   "name": "香蕉闻雪灵感体",
+   "series": "香蕉灵感",
+   "author": "香蕉灵感",
+   "version": "2.00(2023/05/03)",
+   "date": "2025年03月",
+   "url": "https://www.maoken.com/freefonts/25254.html"
+  },
+  {
+   "name": "浪课江湖联盟简体",
+   "series": "浪课江湖",
+   "author": "浪课江湖",
+   "version": "1.00(2025/03/18)",
+   "date": "2025年03月",
+   "url": "https://www.maoken.com/freefonts/25199.html"
+  },
+  {
+   "name": "栗壳坚坚体",
+   "series": "栗壳字库系列",
+   "author": "栗壳字库",
+   "version": "2.1(2025/07/04)",
+   "date": "2025年02月",
+   "url": "https://www.maoken.com/freefonts/24987.html"
+  },
+  {
+   "name": "荷塘月色手写体",
+   "series": "豆角系列",
+   "author": "豆角豆角",
+   "version": "1.00(2025/01/14)",
+   "date": "2025年01月",
+   "url": "https://www.maoken.com/freefonts/24739.html"
+  },
+  {
+   "name": "摇醒青年黑",
+   "series": "摇醒实验室",
+   "author": "多人共创",
+   "version": "1.0(2024/12/03)",
+   "date": "2024年12月",
+   "url": "https://www.maoken.com/freefonts/28870.html"
+  },
+  {
+   "name": "万事全兴体",
+   "series": "全兴酒业",
+   "author": "全兴酒业",
+   "version": "1.00(2024/11/20)",
+   "date": "2024年11月",
+   "url": "https://www.maoken.com/freefonts/24341.html"
+  },
+  {
+   "name": "vivo Sans",
+   "series": "vivo",
+   "author": "方正字库×vivo",
+   "version": "1.00(2024/09/26)",
+   "date": "2024年09月",
+   "url": "https://www.maoken.com/freefonts/22969.html"
+  },
+  {
+   "name": "落尘无衬",
+   "series": "Losketch",
+   "author": "Losketch",
+   "version": "2.500(2025-09-21)",
+   "date": "2024年08月",
+   "url": "https://www.maoken.com/freefonts/27150.html"
+  },
+  {
+   "name": "白路彤彤手写体",
+   "series": "白路字库",
+   "author": "白路",
+   "version": "1.00(2024/08/20)",
+   "date": "2024年08月",
+   "url": "https://www.maoken.com/freefonts/22584.html"
+  },
+  {
+   "name": "白路飞云手写体",
+   "series": "白路字库",
+   "author": "白路",
+   "version": "1.00(2024/07/31)",
+   "date": "2024年07月",
+   "url": "https://www.maoken.com/freefonts/22682.html"
+  },
+  {
+   "name": "白路俏丽手写体",
+   "series": "白路字库",
+   "author": "白路",
+   "version": "1.0(2024/07/29)",
+   "date": "2024年07月",
+   "url": "https://www.maoken.com/freefonts/22504.html"
+  },
+  {
+   "name": "白路棒棒手写体",
+   "series": "白路字库",
+   "author": "白路",
+   "version": "1.0(2024/07/29)",
+   "date": "2024年07月",
+   "url": "https://www.maoken.com/freefonts/22470.html"
+  },
+  {
+   "name": "程荣光刻楷",
+   "series": "文岚铭设计",
+   "author": "程荣",
+   "version": "1.0(2024/06/24)",
+   "date": "2024年07月",
+   "url": "https://www.maoken.com/freefonts/22487.html"
+  },
+  {
+   "name": "也字工厂柳叶体",
+   "series": "也字工厂",
+   "author": "也字工厂",
+   "version": "1.00(2024/07/19)",
+   "date": "2024年07月",
+   "url": "https://www.maoken.com/freefonts/22255.html"
+  },
+  {
+   "name": "也字工厂小石头",
+   "series": "也字工厂",
+   "author": "也字工厂",
+   "version": "1.00(2024/05/01)",
+   "date": "2024年05月",
+   "url": "https://www.maoken.com/freefonts/21221.html"
+  },
+  {
+   "name": "字制区喜脉喜欢体",
+   "series": "字制区系列",
+   "author": "字制区",
+   "version": "1.00(2024/07/07)",
+   "date": "2024年07月 ",
+   "url": "https://www.maoken.com/freefonts/22002.html"
+  },
+  {
+   "name": "字制区喜脉体",
+   "series": "字制区系列",
+   "author": "肖维野纳\t",
+   "version": "2.00(2024/07/11)",
+   "date": "2021年01月",
+   "url": "https://www.maoken.com/freefonts/8918.html"
+  },
+  {
+   "name": "平方追风体",
+   "series": "平方造字",
+   "author": "平方造字",
+   "version": "1.00(2025/07/07)",
+   "date": "2024年06月",
+   "url": "https://www.maoken.com/freefonts/21885.html"
+  },
+  {
+   "name": "平方长安体",
+   "series": "平方造字",
+   "author": "平方造字",
+   "version": "1.00(2024/06/04)",
+   "date": "2024年06月",
+   "url": "https://www.maoken.com/freefonts/21784.html"
+  },
+  {
+   "name": "平方赖江湖飞扬体",
+   "series": "平方造字",
+   "author": "平方造字",
+   "version": "1.00(2024/07/18)",
+   "date": "2024年06月",
+   "url": "https://www.maoken.com/freefonts/21710.html"
+  },
+  {
+   "name": "平方刘昂乐天体",
+   "series": "平方造字",
+   "author": "平方造字",
+   "version": "1.00(2024/05/31)",
+   "date": "2024年05月",
+   "url": "https://www.maoken.com/freefonts/21910.html"
+  },
+  {
+   "name": "平方张亚玲黑方体",
+   "series": "平方造字",
+   "author": "平方造字",
+   "version": "1.00(2024/05/31)",
+   "date": "2024年05月",
+   "url": "https://www.maoken.com/freefonts/21909.html"
+  },
+  {
+   "name": "平方公子体",
+   "series": "平方造字",
+   "author": "平方造字",
+   "version": "1.00(2024/05/29)",
+   "date": "2024年05月",
+   "url": "https://www.maoken.com/freefonts/21869.html"
+  },
+  {
+   "name": "平方赖江湖琅琊体",
+   "series": "平方造字",
+   "author": "平方造字",
+   "version": "1.00(2024/05/31)",
+   "date": "2024年05月",
+   "url": "https://www.maoken.com/freefonts/21830.html"
+  }
+ ]
+}

@@ -1,0 +1,11 @@
+{
+  "version": "1.0.0",
+  "note": "示例清单：version 变更即触发动作更新。files 里的 url 用 raw 直链，sha256 为文件内容哈希（hex 小写）。",
+  "files": [
+    {
+      "path": "sample.txt",
+      "url": "https://raw.githubusercontent.com/weizhi123sdo/quicker-actions/main/dist/sample.txt",
+      "sha256": "4b43c7213c779bfe9308a8765d5df957860c024c6d7f2b4c08b954d5a73aad98"
+    }
+  ]
+}
