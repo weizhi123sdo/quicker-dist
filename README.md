@@ -17,8 +17,14 @@ Gitee 的 raw 会 302 跳到 `raw.giteeusercontent.com`，跨主机后 .NET 会�
 
 ## 直链
 
-- Gitee（主，国内直连）：`https://gitee.com/weizhiOWO/quicker-dist/raw/main/<路径>`
-- GitHub（备）：`https://raw.githubusercontent.com/weizhi123sdo/quicker-dist/main/<路径>`
+- **Gitee（主，国内直连）**：`https://gitee.com/weizhiOWO/quicker-actions/raw/main/<路径>`
+- **GitHub（备）**：`https://raw.githubusercontent.com/weizhi123sdo/quicker-dist/main/<路径>`
+
+> 注：Gitee 那边的仓库名仍是 `quicker-actions`——它原本是主仓的公开镜像，
+> 已**重写历史为本仓内容**（只留可抓取的东西，源码与技能历史一并清除）。
+> 保留原名是因为 Gitee 改可见性/建新仓要走 API，而本机只有账号密码、没有私人令牌。
+> 若以后想换成规范命名的 `quicker-dist`，建好空仓再改这两处：
+> `git remote set-url gitee <新地址>` 与动作里的 `GiteeUrl` 常量。
 
 ## 改内容
 
