@@ -1,6 +1,6 @@
 {
  "version": "1.0.0",
- "generatedAt": "2026-09-10 23:08:27",
+ "generatedAt": "2026-09-10 23:57:03",
  "note": "cn=中文名（动作侧搜索用）；code=JSX 正文，动作侧用 DoJavaScript 执行；cat=分类名",
  "categories": [
   {
@@ -12,55 +12,55 @@
   {
    "name": "图层操作",
    "scripts": [
-    "_示例占位-2"
+    "显示当前图层信息"
    ]
   },
   {
    "name": "导出与保存",
    "scripts": [
-    "_示例占位-2-2"
+    "_示例占位-2"
    ]
   },
   {
    "name": "我的常用",
    "scripts": [
-    "_示例占位-2-2-2"
+    "新建参考线"
    ]
   },
   {
    "name": "批处理",
    "scripts": [
-    "_示例占位-2-2-2-2"
+    "_示例占位-2-2"
    ]
   },
   {
    "name": "文字",
    "scripts": [
-    "_示例占位-2-2-2-2-2"
+    "_示例占位-2-2-2"
    ]
   },
   {
    "name": "文档与画布",
    "scripts": [
-    "_示例占位-2-2-2-2-2-2"
+    "_示例占位-2-2-2-2"
    ]
   },
   {
    "name": "智能对象",
    "scripts": [
-    "_示例占位-2-2-2-2-2-2-2"
+    "_示例占位-2-2-2-2-2"
    ]
   },
   {
    "name": "选区与蒙版",
    "scripts": [
-    "_示例占位-2-2-2-2-2-2-2-2"
+    "_示例占位-2-2-2-2-2-2"
    ]
   },
   {
    "name": "颜色与调整",
    "scripts": [
-    "_示例占位-2-2-2-2-2-2-2-2-2"
+    "_示例占位-2-2-2-2-2-2-2"
    ]
   }
  ],
@@ -71,55 +71,55 @@
    "cat": "变换与对齐",
    "code": "// ↓ 示例占位：把你的脚本内容贴到这里，或直接删掉本文件\napp.activeDocument.activeLayer.name = app.activeDocument.activeLayer.name;"
   },
-  "_示例占位-2": {
-   "cn": "（改成中文名，菜单搜索就搜这个）",
-   "desc": "（可选，一句说明）",
+  "显示当前图层信息": {
+   "cn": "显示当前图层信息",
+   "desc": "",
    "cat": "图层操作",
-   "code": "// ↓ 示例占位：把你的脚本内容贴到这里，或直接删掉本文件\napp.activeDocument.activeLayer.name = app.activeDocument.activeLayer.name;"
+   "code": "#target photoshop\n// 只读：把当前文档与图层的信息弹出来看一眼（不修改任何东西）\n(function showInfo() {\n    if (app.documents.length === 0) {\n        alert(\"请先在 Photoshop 中打开一个文档。\");\n        return;\n    }\n    var d = app.activeDocument;\n    var l = d.activeLayer;\n\n    var size = \"（无边界）\";\n    try {\n        var b = l.bounds;\n        size = Math.round(b[2].value - b[0].value) + \" × \" + Math.round(b[3].value - b[1].value) + \" px\";\n    } catch (e) { }\n\n    var kind = \"\";\n    try { if (l.kind !== undefined && l.kind !== null) kind = \" / \" + l.kind; } catch (e) { }\n\n    alert(\"文档：\" + d.name\n        + \"\\n尺寸：\" + d.width + \" × \" + d.height\n        + \"\\n分辨率：\" + d.resolution + \" ppi\"\n        + \"\\n\\n当前图层：\" + l.name\n        + \"\\n类型：\" + l.typename + kind\n        + \"\\n图层尺寸：\" + size\n        + \"\\n不透明度：\" + l.opacity + \"%\"\n        + \"\\n混合模式：\" + l.blendMode);\n})();"
   },
-  "_示例占位-2-2": {
+  "_示例占位-2": {
    "cn": "（改成中文名，菜单搜索就搜这个）",
    "desc": "（可选，一句说明）",
    "cat": "导出与保存",
    "code": "// ↓ 示例占位：把你的脚本内容贴到这里，或直接删掉本文件\napp.activeDocument.activeLayer.name = app.activeDocument.activeLayer.name;"
   },
-  "_示例占位-2-2-2": {
-   "cn": "（改成中文名，菜单搜索就搜这个）",
-   "desc": "（可选，一句说明）",
+  "新建参考线": {
+   "cn": "新建参考线",
+   "desc": "",
    "cat": "我的常用",
-   "code": "// ↓ 示例占位：把你的脚本内容贴到这里，或直接删掉本文件\napp.activeDocument.activeLayer.name = app.activeDocument.activeLayer.name;"
+   "code": "#target photoshop\n\n(function openGuideLayoutAndAutoLock() {\n    // 1. 检查是否有处于打开状态的文档\n    if (app.documents.length === 0) {\n        alert(\"请先在 Photoshop 中打开一个文档。\");\n        return;\n    }\n\n    var idNewGuideLayout = stringIDToTypeID(\"newGuideLayout\");\n    var SETTINGS_KEY = \"AutoSavedGuideLayoutSettings\";\n    var desc;\n\n    // 2. 读取上次记住的设置（避免恢复成默认 8 栏）\n    try {\n        desc = app.getCustomOptions(SETTINGS_KEY);\n    } catch (e) {\n        desc = new ActionDescriptor();\n    }\n\n    // 3. 打开“新建参考线版面”弹窗\n    try {\n        var resultDesc = executeAction(idNewGuideLayout, desc, DialogModes.ALL);\n\n        // 4. 用户点击“确定”后：先记住新参数，随后立即锁定参考线\n        if (resultDesc) {\n            app.putCustomOptions(SETTINGS_KEY, resultDesc, true);\n            lockAllGuides();\n        }\n    } catch (e) {\n        // 用户主动点击“取消”时静默退出\n        if (e.number !== 8007) {\n            alert(\"操作失败：\" + e.message);\n        }\n    }\n\n    /**\n     * 锁定参考线（等同于勾选菜单栏：视图 -> 锁定参考线）\n     */\n    function lockAllGuides() {\n        try {\n            var descSet = new ActionDescriptor();\n            var ref = new ActionReference();\n            \n            ref.putProperty(charIDToTypeID(\"Prpr\"), stringIDToTypeID(\"guidesLocked\"));\n            ref.putEnumerated(charIDToTypeID(\"capp\"), charIDToTypeID(\"Ordn\"), charIDToTypeID(\"Trgt\"));\n            descSet.putReference(charIDToTypeID(\"null\"), ref);\n\n            var descPref = new ActionDescriptor();\n            // 直接设为 true（锁定状态），即使原本已锁定也不会被意外反转解锁\n            descPref.putBoolean(stringIDToTypeID(\"guidesLocked\"), true);\n            descSet.putObject(charIDToTypeID(\"T   \"), stringIDToTypeID(\"guidePreferences\"), descPref);\n\n            executeAction(charIDToTypeID(\"setd\"), descSet, DialogModes.NO);\n        } catch (err) {\n            // 锁定异常时静默忽略，不干扰正常生成的线\n        }\n    }\n})();"
   },
-  "_示例占位-2-2-2-2": {
+  "_示例占位-2-2": {
    "cn": "（改成中文名，菜单搜索就搜这个）",
    "desc": "（可选，一句说明）",
    "cat": "批处理",
    "code": "// ↓ 示例占位：把你的脚本内容贴到这里，或直接删掉本文件\napp.activeDocument.activeLayer.name = app.activeDocument.activeLayer.name;"
   },
-  "_示例占位-2-2-2-2-2": {
+  "_示例占位-2-2-2": {
    "cn": "（改成中文名，菜单搜索就搜这个）",
    "desc": "（可选，一句说明）",
    "cat": "文字",
    "code": "// ↓ 示例占位：把你的脚本内容贴到这里，或直接删掉本文件\napp.activeDocument.activeLayer.name = app.activeDocument.activeLayer.name;"
   },
-  "_示例占位-2-2-2-2-2-2": {
+  "_示例占位-2-2-2-2": {
    "cn": "（改成中文名，菜单搜索就搜这个）",
    "desc": "（可选，一句说明）",
    "cat": "文档与画布",
    "code": "// ↓ 示例占位：把你的脚本内容贴到这里，或直接删掉本文件\napp.activeDocument.activeLayer.name = app.activeDocument.activeLayer.name;"
   },
-  "_示例占位-2-2-2-2-2-2-2": {
+  "_示例占位-2-2-2-2-2": {
    "cn": "（改成中文名，菜单搜索就搜这个）",
    "desc": "（可选，一句说明）",
    "cat": "智能对象",
    "code": "// ↓ 示例占位：把你的脚本内容贴到这里，或直接删掉本文件\napp.activeDocument.activeLayer.name = app.activeDocument.activeLayer.name;"
   },
-  "_示例占位-2-2-2-2-2-2-2-2": {
+  "_示例占位-2-2-2-2-2-2": {
    "cn": "（改成中文名，菜单搜索就搜这个）",
    "desc": "（可选，一句说明）",
    "cat": "选区与蒙版",
    "code": "// ↓ 示例占位：把你的脚本内容贴到这里，或直接删掉本文件\napp.activeDocument.activeLayer.name = app.activeDocument.activeLayer.name;"
   },
-  "_示例占位-2-2-2-2-2-2-2-2-2": {
+  "_示例占位-2-2-2-2-2-2-2": {
    "cn": "（改成中文名，菜单搜索就搜这个）",
    "desc": "（可选，一句说明）",
    "cat": "颜色与调整",
