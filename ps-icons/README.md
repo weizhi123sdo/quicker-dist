@@ -4,7 +4,7 @@
 
 ## 文件
 
-- `index.json` —— 图标清单，单文件约 84KB：
+- `index.json` —— 图标清单，单文件约 136KB：
   ```json
   {
     "version": "2.1.0",
@@ -22,7 +22,7 @@
 
 ## 以后怎么改图标（只在仓库里改，本机不用管）
 
-1. 改 `remote-updater/scripts/build_icon_pack.py` 顶部的 `GROUPS`：
+1. 在主仓改 `remote-updater/scripts/build_icon_pack.py` 顶部的 `GROUPS`（生成后会自动同步到本仓与动作缓存）：
    ```python
    ("图层 / 对象", [
        ("layers", "图层"),          # (mdi 图标名, 中文名)
@@ -59,11 +59,11 @@
 想换整套（比如从 mdi 换成 Material Symbols）：改 `build_icon_pack.py` 里的 `API` 前缀与 `source` 字段，
 并把 `GROUPS` 的名字换成新图标集的（去 icon-sets.iconify.design 对应页面查名字）。清单格式不用动。
 
-## 一次推两边（可选）
+## 本仓与本仓的直链
 
-```bash
-git remote set-url --add --push origin https://github.com/weizhi123sdo/quicker-actions.git
-git remote set-url --add --push origin https://gitee.com/weizhiOWO/quicker-actions.git
-# 之后 git push origin main 就会同时推 GitHub 与 Gitee
-```
-（副作用：`origin` 的 push 地址变成两个，`git remote -v` 会看到两行 push。）
+分发仓是**独立仓库 `quicker-dist`**（公开）：
+
+- Gitee（主，国内直连）：`https://gitee.com/weizhiOWO/quicker-dist/raw/main/ps-icons/index.json`
+- GitHub（备）：`https://raw.githubusercontent.com/weizhi123sdo/quicker-dist/main/ps-icons/index.json`
+
+主仓 `quicker-actions`（私有）里已不再保留 `dist/`。

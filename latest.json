@@ -4,7 +4,7 @@
   "files": [
     {
       "path": "sample.txt",
-      "url": "https://raw.githubusercontent.com/weizhi123sdo/quicker-actions/main/dist/sample.txt",
+      "url": "https://gitee.com/weizhiOWO/quicker-dist/raw/main/sample.txt",
       "sha256": "4b43c7213c779bfe9308a8765d5df957860c024c6d7f2b4c08b954d5a73aad98"
     }
   ]
