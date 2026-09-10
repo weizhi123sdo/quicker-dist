@@ -1,0 +1,129 @@
+{
+ "version": "1.0.0",
+ "generatedAt": "2026-09-10 23:08:27",
+ "note": "cn=中文名（动作侧搜索用）；code=JSX 正文，动作侧用 DoJavaScript 执行；cat=分类名",
+ "categories": [
+  {
+   "name": "变换与对齐",
+   "scripts": [
+    "_示例占位"
+   ]
+  },
+  {
+   "name": "图层操作",
+   "scripts": [
+    "_示例占位-2"
+   ]
+  },
+  {
+   "name": "导出与保存",
+   "scripts": [
+    "_示例占位-2-2"
+   ]
+  },
+  {
+   "name": "我的常用",
+   "scripts": [
+    "_示例占位-2-2-2"
+   ]
+  },
+  {
+   "name": "批处理",
+   "scripts": [
+    "_示例占位-2-2-2-2"
+   ]
+  },
+  {
+   "name": "文字",
+   "scripts": [
+    "_示例占位-2-2-2-2-2"
+   ]
+  },
+  {
+   "name": "文档与画布",
+   "scripts": [
+    "_示例占位-2-2-2-2-2-2"
+   ]
+  },
+  {
+   "name": "智能对象",
+   "scripts": [
+    "_示例占位-2-2-2-2-2-2-2"
+   ]
+  },
+  {
+   "name": "选区与蒙版",
+   "scripts": [
+    "_示例占位-2-2-2-2-2-2-2-2"
+   ]
+  },
+  {
+   "name": "颜色与调整",
+   "scripts": [
+    "_示例占位-2-2-2-2-2-2-2-2-2"
+   ]
+  }
+ ],
+ "scripts": {
+  "_示例占位": {
+   "cn": "（改成中文名，菜单搜索就搜这个）",
+   "desc": "（可选，一句说明）",
+   "cat": "变换与对齐",
+   "code": "// ↓ 示例占位：把你的脚本内容贴到这里，或直接删掉本文件\napp.activeDocument.activeLayer.name = app.activeDocument.activeLayer.name;"
+  },
+  "_示例占位-2": {
+   "cn": "（改成中文名，菜单搜索就搜这个）",
+   "desc": "（可选，一句说明）",
+   "cat": "图层操作",
+   "code": "// ↓ 示例占位：把你的脚本内容贴到这里，或直接删掉本文件\napp.activeDocument.activeLayer.name = app.activeDocument.activeLayer.name;"
+  },
+  "_示例占位-2-2": {
+   "cn": "（改成中文名，菜单搜索就搜这个）",
+   "desc": "（可选，一句说明）",
+   "cat": "导出与保存",
+   "code": "// ↓ 示例占位：把你的脚本内容贴到这里，或直接删掉本文件\napp.activeDocument.activeLayer.name = app.activeDocument.activeLayer.name;"
+  },
+  "_示例占位-2-2-2": {
+   "cn": "（改成中文名，菜单搜索就搜这个）",
+   "desc": "（可选，一句说明）",
+   "cat": "我的常用",
+   "code": "// ↓ 示例占位：把你的脚本内容贴到这里，或直接删掉本文件\napp.activeDocument.activeLayer.name = app.activeDocument.activeLayer.name;"
+  },
+  "_示例占位-2-2-2-2": {
+   "cn": "（改成中文名，菜单搜索就搜这个）",
+   "desc": "（可选，一句说明）",
+   "cat": "批处理",
+   "code": "// ↓ 示例占位：把你的脚本内容贴到这里，或直接删掉本文件\napp.activeDocument.activeLayer.name = app.activeDocument.activeLayer.name;"
+  },
+  "_示例占位-2-2-2-2-2": {
+   "cn": "（改成中文名，菜单搜索就搜这个）",
+   "desc": "（可选，一句说明）",
+   "cat": "文字",
+   "code": "// ↓ 示例占位：把你的脚本内容贴到这里，或直接删掉本文件\napp.activeDocument.activeLayer.name = app.activeDocument.activeLayer.name;"
+  },
+  "_示例占位-2-2-2-2-2-2": {
+   "cn": "（改成中文名，菜单搜索就搜这个）",
+   "desc": "（可选，一句说明）",
+   "cat": "文档与画布",
+   "code": "// ↓ 示例占位：把你的脚本内容贴到这里，或直接删掉本文件\napp.activeDocument.activeLayer.name = app.activeDocument.activeLayer.name;"
+  },
+  "_示例占位-2-2-2-2-2-2-2": {
+   "cn": "（改成中文名，菜单搜索就搜这个）",
+   "desc": "（可选，一句说明）",
+   "cat": "智能对象",
+   "code": "// ↓ 示例占位：把你的脚本内容贴到这里，或直接删掉本文件\napp.activeDocument.activeLayer.name = app.activeDocument.activeLayer.name;"
+  },
+  "_示例占位-2-2-2-2-2-2-2-2": {
+   "cn": "（改成中文名，菜单搜索就搜这个）",
+   "desc": "（可选，一句说明）",
+   "cat": "选区与蒙版",
+   "code": "// ↓ 示例占位：把你的脚本内容贴到这里，或直接删掉本文件\napp.activeDocument.activeLayer.name = app.activeDocument.activeLayer.name;"
+  },
+  "_示例占位-2-2-2-2-2-2-2-2-2": {
+   "cn": "（改成中文名，菜单搜索就搜这个）",
+   "desc": "（可选，一句说明）",
+   "cat": "颜色与调整",
+   "code": "// ↓ 示例占位：把你的脚本内容贴到这里，或直接删掉本文件\napp.activeDocument.activeLayer.name = app.activeDocument.activeLayer.name;"
+  }
+ }
+}
