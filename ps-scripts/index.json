@@ -1,7 +1,7 @@
 {
  "version": "1.0.0",
- "generatedAt": "2026-09-10 23:57:19",
- "note": "cn=中文名（动作侧搜索用）；code=JSX 正文，动作侧用 DoJavaScript 执行；cat=分类名",
+ "generatedAt": "2026-09-11 12:45:53",
+ "note": "cn=中文名（动作侧搜索用）；code=JSX 正文，动作侧用 DoJavaScript 执行；cat=分类名；shot=效果图（相对 ps-scripts/ 的路径，可选）",
  "categories": [
   {
    "name": "图层操作",
@@ -13,6 +13,12 @@
    "name": "我的常用",
    "scripts": [
     "新建参考线"
+   ]
+  },
+  {
+   "name": "颜色与调整",
+   "scripts": [
+    "测试一下"
    ]
   }
  ],
@@ -28,6 +34,12 @@
    "desc": "",
    "cat": "我的常用",
    "code": "#target photoshop\n\n(function openGuideLayoutAndAutoLock() {\n    // 1. 检查是否有处于打开状态的文档\n    if (app.documents.length === 0) {\n        alert(\"请先在 Photoshop 中打开一个文档。\");\n        return;\n    }\n\n    var idNewGuideLayout = stringIDToTypeID(\"newGuideLayout\");\n    var SETTINGS_KEY = \"AutoSavedGuideLayoutSettings\";\n    var desc;\n\n    // 2. 读取上次记住的设置（避免恢复成默认 8 栏）\n    try {\n        desc = app.getCustomOptions(SETTINGS_KEY);\n    } catch (e) {\n        desc = new ActionDescriptor();\n    }\n\n    // 3. 打开“新建参考线版面”弹窗\n    try {\n        var resultDesc = executeAction(idNewGuideLayout, desc, DialogModes.ALL);\n\n        // 4. 用户点击“确定”后：先记住新参数，随后立即锁定参考线\n        if (resultDesc) {\n            app.putCustomOptions(SETTINGS_KEY, resultDesc, true);\n            lockAllGuides();\n        }\n    } catch (e) {\n        // 用户主动点击“取消”时静默退出\n        if (e.number !== 8007) {\n            alert(\"操作失败：\" + e.message);\n        }\n    }\n\n    /**\n     * 锁定参考线（等同于勾选菜单栏：视图 -> 锁定参考线）\n     */\n    function lockAllGuides() {\n        try {\n            var descSet = new ActionDescriptor();\n            var ref = new ActionReference();\n            \n            ref.putProperty(charIDToTypeID(\"Prpr\"), stringIDToTypeID(\"guidesLocked\"));\n            ref.putEnumerated(charIDToTypeID(\"capp\"), charIDToTypeID(\"Ordn\"), charIDToTypeID(\"Trgt\"));\n            descSet.putReference(charIDToTypeID(\"null\"), ref);\n\n            var descPref = new ActionDescriptor();\n            // 直接设为 true（锁定状态），即使原本已锁定也不会被意外反转解锁\n            descPref.putBoolean(stringIDToTypeID(\"guidesLocked\"), true);\n            descSet.putObject(charIDToTypeID(\"T   \"), stringIDToTypeID(\"guidePreferences\"), descPref);\n\n            executeAction(charIDToTypeID(\"setd\"), descSet, DialogModes.NO);\n        } catch (err) {\n            // 锁定异常时静默忽略，不干扰正常生成的线\n        }\n    }\n})();"
+  },
+  "测试一下": {
+   "cn": "测试一下",
+   "desc": "",
+   "cat": "颜色与调整",
+   "code": "/*\n * 脚本名称: Add Grain Texture (添加胶片颗粒纹理)\n * 描述: 新建50%灰图层 -> 添加6%杂色 -> 叠加模式 -> 80%不透明度\n * 作者: Photoshop脚本开发专家\n * 兼容性: Photoshop CS6 - CC 2024+\n */\n\n#target photoshop\n\napp.bringToFront();\n\n// 主执行函数\nfunction main() {\n    // 1. 检查是否有文档打开\n    if (app.documents.length === 0) {\n        alert(\"请先打开一张图片！\");\n        return;\n    }\n\n    var doc = app.activeDocument;\n\n    // 2. 挂起历史记录，方便一步撤销\n    doc.suspendHistory(\"添加颗粒纹理\", \"processTexture()\");\n}\n\n// 核心处理逻辑\nfunction processTexture() {\n    var doc = app.activeDocument;\n    \n    // 保存当前的标尺单位设置，并在结束后恢复，防止单位混乱\n    var originalRulerUnits = app.preferences.rulerUnits;\n    app.preferences.rulerUnits = Units.PIXELS;\n\n    try {\n        // --- 步骤 1: 新建图层 ---\n        var layer = doc.artLayers.add();\n        layer.name = \"胶片颗粒纹理\";\n\n        // --- 步骤 2: 填充 50% 灰 (模拟纯色层并栅格化的结果) ---\n        // 定义颜色\n        var grayColor = new SolidColor();\n        if (doc.mode === DocumentMode.CMYK) {\n            grayColor.cmyk.cyan = 0;\n            grayColor.cmyk.magenta = 0;\n            grayColor.cmyk.yellow = 0;\n            grayColor.cmyk.black = 50;\n        } else {\n            // RGB 或其他模式默认为 RGB 128,128,128\n            grayColor.rgb.red = 128;\n            grayColor.rgb.green = 128;\n            grayColor.rgb.blue = 128;\n        }\n\n        // 全选并填充\n        doc.selection.selectAll();\n        doc.selection.fill(grayColor);\n        doc.selection.deselect();\n\n        // --- 步骤 3: 添加 6% 杂色 ---\n        // applyAddNoise(amount, distribution, monochromatic)\n        // amount: 6%\n        // distribution: NoiseDistribution.GAUSSIAN (高斯分布质感更好) 或 UNIFORM (平均分布)\n        // monochromatic: true (单色，通常用于纹理避免产生彩色噪点)\n        layer.applyAddNoise(6, NoiseDistribution.GAUSSIAN, true);\n\n        // --- 步骤 4: 图层模式设为 叠加 (Overlay) ---\n        layer.blendMode = BlendMode.OVERLAY;\n\n        // --- 步骤 5: 不透明度设为 80% ---\n        layer.opacity = 80;\n\n    } catch (e) {\n        // 异常捕获\n        alert(\"脚本执行出错: \" + e.message + \"\\n行号: \" + e.line);\n    } finally {\n        // 恢复标尺设置\n        app.preferences.rulerUnits = originalRulerUnits;\n    }\n}\n\n// 运行脚本\nmain();"
   }
  }
 }
