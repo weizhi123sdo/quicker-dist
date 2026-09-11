@@ -1,6 +1,6 @@
 {
  "version": "1.0.0",
- "generatedAt": "2026-09-11 12:51:16",
+ "generatedAt": "2026-09-11 12:52:29",
  "note": "cn=中文名（动作侧搜索用）；code=JSX 正文，动作侧用 DoJavaScript 执行；cat=分类名；shot=效果图（相对 ps-scripts/ 的路径，可选）",
  "categories": [
   {
