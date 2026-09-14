@@ -1,7 +1,7 @@
 {
  "version": "1.1.0",
  "schema": 2,
- "generatedAt": "2026-09-12 14:16:15",
+ "generatedAt": "2026-09-14 17:26:46",
  "note": "cn=中文名（动作侧搜索用）；code=JSX 正文，动作侧用 DoJavaScript 执行；cat=分类名；shot=效果图（相对 ps-scripts/ 的路径，可选）；hash=正文指纹（判断菜单里那条是否旧版）；risk=危险 API 命中（中文说明见 riskLabels）；updatedAt=源文件最后修改时间；py=中文名的拼音首字母（生成期算好，动作侧直接用）",
  "riskLabels": {
   "save": {
@@ -26,8 +26,8 @@
   }
  },
  "counts": {
-  "scripts": 4,
-  "categories": 4,
+  "scripts": 9,
+  "categories": 5,
   "shots": 1,
   "risky": 4
  },
@@ -35,7 +35,11 @@
   {
    "name": "图层操作",
    "scripts": [
-    "显示当前图层信息"
+    "复制图层样式",
+    "展开或折叠组",
+    "显示当前图层信息",
+    "粘贴图层样式",
+    "解锁所有图层"
    ]
   },
   {
@@ -51,6 +55,12 @@
    ]
   },
   {
+   "name": "智能对象",
+   "scripts": [
+    "转为智能对象"
+   ]
+  },
+  {
    "name": "颜色与调整",
    "scripts": [
     "添加胶片颗粒纹理"
@@ -58,6 +68,30 @@
   }
  ],
  "scripts": {
+  "复制图层样式": {
+   "cn": "复制图层样式",
+   "desc": "复制当前选中图层的图层样式到剪贴板，供后续粘贴到其他图层",
+   "cat": "图层操作",
+   "code": "#target photoshop\n(function copyLayerStyle() {\n    if (app.documents.length === 0) return;\n    try {\n        var r = new ActionReference();\n        r.putEnumerated(stringIDToTypeID('layer'), stringIDToTypeID('ordinal'), stringIDToTypeID('targetEnum'));\n        var d = new ActionDescriptor();\n        d.putReference(stringIDToTypeID('null'), r);\n        executeAction(stringIDToTypeID('copyToLayer'), d, DialogModes.NO);\n    } catch (e) {}\n})();",
+   "hash": "8e3c15834e5d",
+   "bytes": 445,
+   "lines": 11,
+   "risk": [],
+   "py": "fztcys",
+   "updatedAt": "2026-09-14 17:26"
+  },
+  "展开或折叠组": {
+   "cn": "展开或折叠组",
+   "desc": "一键触发 collapseAllGroupsEvent 折叠或展开所有图层组",
+   "cat": "图层操作",
+   "code": "#target photoshop\n(function collapseAllGroups() {\n    if (app.documents.length === 0) return;\n    var d = app.activeDocument;\n    var cl = d.activeLayer;\n    var ta = cl;\n    while (ta.parent && ta.parent.typename !== 'Document') {\n        ta = ta.parent;\n    }\n    if (ta.typename !== 'LayerSet') return;\n    try {\n        executeAction(stringIDToTypeID('collapseAllGroupsEvent'), new ActionDescriptor(), DialogModes.NO);\n    } catch (e) {}\n    if (ta.layers.length > 0) d.activeLayer = ta.layers[0];\n    else d.activeLayer = ta;\n})();",
+   "hash": "4c8b73be1965",
+   "bytes": 536,
+   "lines": 16,
+   "risk": [],
+   "py": "zkhzdz",
+   "updatedAt": "2026-09-14 17:26"
+  },
   "显示当前图层信息": {
    "cn": "显示当前图层信息",
    "desc": "只读查看：弹出当前文档与当前图层的名称/类型/尺寸/不透明度/混合模式，不改动任何东西",
@@ -71,6 +105,30 @@
    ],
    "py": "xsdqtcxx",
    "updatedAt": "2026-09-12 14:10"
+  },
+  "粘贴图层样式": {
+   "cn": "粘贴图层样式",
+   "desc": "将已复制的图层样式粘贴到当前选中的图层",
+   "cat": "图层操作",
+   "code": "#target photoshop\n(function pasteLayerStyle() {\n    if (app.documents.length === 0) return;\n    try {\n        var r = new ActionReference();\n        r.putEnumerated(stringIDToTypeID('layer'), stringIDToTypeID('ordinal'), stringIDToTypeID('targetEnum'));\n        var d = new ActionDescriptor();\n        d.putReference(stringIDToTypeID('null'), r);\n        executeAction(stringIDToTypeID('pasteToLayer'), d, DialogModes.NO);\n    } catch (e) {}\n})();",
+   "hash": "c3fd2595cf0e",
+   "bytes": 447,
+   "lines": 11,
+   "risk": [],
+   "py": "zttcys",
+   "updatedAt": "2026-09-14 17:26"
+  },
+  "解锁所有图层": {
+   "cn": "解锁所有图层",
+   "desc": "遍历当前文档中所有锁定的图层（包括位置/透明度/全部锁定），单步历史记录内一键解除锁定",
+   "cat": "图层操作",
+   "code": "#target photoshop\n(function unlockAllLayers() {\n    if (app.documents.length === 0) return;\n    var d = app.activeDocument;\n    function doUnlock() {\n        try {\n            if (d.backgroundLayer) d.backgroundLayer.isBackgroundLayer = false;\n        } catch (e) {}\n        var ts = 0;\n        try {\n            var r2 = new ActionReference();\n            r2.putProperty(charIDToTypeID('Prpr'), stringIDToTypeID('numberOfLayers'));\n            r2.putEnumerated(charIDToTypeID('Dcmn'), charIDToTypeID('Ordn'), charIDToTypeID('Trgt'));\n            ts = executeActionGet(r2).getInteger(stringIDToTypeID('numberOfLayers'));\n        } catch (e) { return; }\n        for (var j = 1; j <= ts; j++) {\n            try {\n                var r3 = new ActionReference();\n                r3.putIndex(charIDToTypeID('Lyr '), j);\n                var ld = executeActionGet(r3);\n                if (typeIDToStringID(ld.getEnumerationValue(stringIDToTypeID('layerSection'))) !== 'layerSectionEnd' && ld.hasKey(stringIDToTypeID('layerLocking'))) {\n                    var lk = ld.getObjectValue(stringIDToTypeID('layerLocking'));\n                    var d2 = new ActionDescriptor();\n                    var rf = new ActionReference();\n                    rf.putIdentifier(charIDToTypeID('Lyr '), ld.getInteger(stringIDToTypeID('layerID')));\n                    d2.putReference(charIDToTypeID('null'), rf);\n                    var lp = new ActionDescriptor();\n                    var ks = ['protectAll', 'protectComposite', 'protectPosition', 'protectTrans', 'protectArtboardAutonest'];\n                    var sh = false;\n                    for (var k = 0; k < ks.length; k++) {\n                        var kid = stringIDToTypeID(ks[k]);\n                        if (lk.hasKey(kid) && lk.getBoolean(kid) === true) {\n                            lp.putBoolean(kid, false);\n                            sh = true;\n                        }\n                    }\n                    if (sh) {\n                        d2.putObject(charIDToTypeID('T   '), stringIDToTypeID('layerLocking'), lp);\n                        executeAction(charIDToTypeID('setd'), d2, DialogModes.NO);\n                    }\n                }\n            } catch (e) {}\n        }\n    }\n    d.suspendHistory('解锁所有图层', 'doUnlock()');\n})();",
+   "hash": "f7df2ddc8712",
+   "bytes": 2298,
+   "lines": 46,
+   "risk": [],
+   "py": "jssytc",
+   "updatedAt": "2026-09-14 17:26"
   },
   "新建参考线": {
    "cn": "新建参考线",
@@ -100,6 +158,18 @@
    "py": "plxgwzys",
    "updatedAt": "2026-09-11 12:02",
    "shot": "shots/814ffc3199-a73a134d.png"
+  },
+  "转为智能对象": {
+   "cn": "转为智能对象",
+   "desc": "将当前选中的图层或形状快速封装转换为智能对象 (SmartObject)",
+   "cat": "智能对象",
+   "code": "#target photoshop\n(function convertToSmartObject() {\n    if (app.documents.length === 0) return;\n    try {\n        var id = charIDToTypeID('Mk  ');\n        var d = new ActionDescriptor();\n        d.putClass(charIDToTypeID('Nw  '), charIDToTypeID('Plc '));\n        var r = new ActionReference();\n        r.putClass(stringIDToTypeID('smartObject'));\n        d.putReference(charIDToTypeID('Usng'), r);\n        r.putEnumerated(charIDToTypeID('Lyr '), charIDToTypeID('Ordn'), charIDToTypeID('Trgt'));\n        d.putReference(charIDToTypeID('At  '), r);\n        executeAction(id, d, DialogModes.NO);\n    } catch (e) {}\n})();",
+   "hash": "8ca30ffc24b5",
+   "bytes": 617,
+   "lines": 15,
+   "risk": [],
+   "py": "zwzndx",
+   "updatedAt": "2026-09-14 17:26"
   },
   "添加胶片颗粒纹理": {
    "cn": "添加胶片颗粒纹理",
