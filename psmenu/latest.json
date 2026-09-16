@@ -1,6 +1,6 @@
 {
-    "version": "1.2.2",
-    "full_version": "2026.09.16 · 独立版 v1.2.2",
+    "version": "1.2.3",
+    "full_version": "2026.09.16 · 独立版 v1.2.3",
     "date": "2026-09-16",
     "note": "Fluent 滑块/22套精选主题/中键手势防冲突/ClearType抗锯齿/滚动页面/纯净初始预设",
     "files": [
@@ -8,8 +8,8 @@
             "path": "psmenu_standalone.zip",
             "url": "https://gitee.com/weizhiOWO/quicker-actions/raw/main/psmenu/psmenu_standalone.zip",
             "fallbackUrl": "https://raw.githubusercontent.com/weizhi123sdo/quicker-dist/main/psmenu/psmenu_standalone.zip",
-            "sha256": "4a570aaa5d5eae3551febd3b31cf8800b994b0c2a76e0c6690470716bd3b5c6e",
-            "size": 2189893
+            "sha256": "fe3030ddbdd978a238c0042563d0730cbd964c29edb32553fe6f4bd290f6f687",
+            "size": 2190009
         }
     ]
 }
