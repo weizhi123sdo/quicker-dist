@@ -1,15 +1,15 @@
 {
-    "version": "1.2.4",
-    "full_version": "2026.09.16 · 独立版 v1.2.4",
+    "version": "1.0.0",
+    "full_version": "2026.09.16 · 独立版 v1.0.0",
     "date": "2026-09-16",
-    "note": "Fluent 滑块/22套精选主题/中键手势防冲突/ClearType抗锯齿/滚动页面/纯净初始预设",
+    "note": "第一次公开：按中键出菜单（随图层类型变）/ 22 套主题 / 680+ 分类图标 / 右键当场改 / 脚本库勾选即用 / 五页设置（含环境检查与备份历史）/ 应用内一键下载脚本库与卸载入口",
     "files": [
         {
             "path": "psmenu_standalone.zip",
             "url": "https://gitee.com/weizhiOWO/quicker-actions/raw/main/psmenu/psmenu_standalone.zip",
             "fallbackUrl": "https://raw.githubusercontent.com/weizhi123sdo/quicker-dist/main/psmenu/psmenu_standalone.zip",
-            "sha256": "20220ed26c8f5dccb997152d80c8e0f376cb3e715f1f924b99ed266b7a9a5eb7",
-            "size": 2190069
+            "sha256": "df34906625b7aa10b92f2cecfe5a8b63d4132a977546906d7e49a9c5ae14c34d",
+            "size": 2190078
         }
     ]
 }
