@@ -1,15 +1,15 @@
 {
-    "version": "1.0.0",
-    "full_version": "2026.09.16 · 独立版 v1.0.0",
-    "date": "2026-09-16",
-    "note": "第一次公开：按中键出菜单（随图层类型变）/ 22 套主题 / 680+ 分类图标 / 右键当场改 / 脚本库勾选即用 / 五页设置（含环境检查与备份历史）/ 应用内一键下载脚本库与卸载入口",
+    "version": "1.2.4",
+    "full_version": "2026.09.19 · 独立版 v1.2.4",
+    "date": "2026-09-19",
+    "note": "退出即结束进程（治「退出后点动作没反应」的僵尸）/转发失败自动重试与接管/静默失败留日志/首次安装询问开机自启/修复下载目录与首次安装流程",
     "files": [
         {
             "path": "psmenu_standalone.zip",
             "url": "https://gitee.com/weizhiOWO/quicker-actions/raw/main/psmenu/psmenu_standalone.zip",
             "fallbackUrl": "https://raw.githubusercontent.com/weizhi123sdo/quicker-dist/main/psmenu/psmenu_standalone.zip",
-            "sha256": "df34906625b7aa10b92f2cecfe5a8b63d4132a977546906d7e49a9c5ae14c34d",
-            "size": 2190078
+            "sha256": "641c7bcba1ff5bef4c30d6faf2434b1b287129c8d1b2fa30b8fd844492c37281",
+            "size": 2190482
         }
     ]
 }
