@@ -1,15 +1,15 @@
 {
-    "version": "1.2.5",
-    "full_version": "2026.09.21 · 独立版 v1.2.5",
-    "date": "2026-09-21",
-    "note": "统一设置视觉、增加尺寸预设、更新动作快速启动与备用清单",
+    "version": "1.2.6",
+    "full_version": "2026.09.24 · 独立版 v1.2.6",
+    "date": "2026-09-24",
+    "note": "中键去掉 PS 前台限制，任意窗口轻点中键即呼出菜单",
     "files": [
         {
             "path": "psmenu_standalone.zip",
             "url": "https://gitee.com/weizhiOWO/quicker-actions/raw/main/psmenu/psmenu_standalone.zip",
             "fallbackUrl": "https://raw.githubusercontent.com/weizhi123sdo/quicker-dist/main/psmenu/psmenu_standalone.zip",
-            "sha256": "cf8ca41e937fb2f455435e20a222e49fe0255534fa0784df7a66492822129e22",
-            "size": 2230619
+            "sha256": "56e8ede5eb38f624978ef482860996b3d648b42d65a1f9dd06aba02acc4bdeb6",
+            "size": 2230303
         }
     ]
 }
