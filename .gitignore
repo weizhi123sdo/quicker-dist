@@ -1,0 +1,4 @@
+# Mimosa security scan temporary folder
+.mimosa/
+.DS_Store
+*.tmp
