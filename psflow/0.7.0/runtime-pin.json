@@ -1,0 +1,43 @@
+{
+  "packageFormat": 3,
+  "runtimeId": "win-x64-node24.22.0-868a2e2d986b8f4c-r1",
+  "nodeVersion": "24.22.0",
+  "dependencyFingerprint": "868a2e2d986b8f4c0ac4818f336a28809c68b4856f24a53580adc6ed32069798",
+  "filename": "runtime-win-x64-node24.22.0-868a2e2d986b8f4c-r1.zip",
+  "bytes": 43774240,
+  "sha256": "88443420c50d64634c141df258059c371b440eb76a1accfdfa2b64fecce8713e",
+  "filesManifestSha256": "c8f0fb54d4d6ead51c42de14638d70264b3e8b88f9b27be5048376095fae7118",
+  "sourceSha256": "54c1906f72595ec94b85c4ca5d5ee64b4274f52ca9bcfd4fa2181feb43c7c217",
+  "components": [
+    {
+      "filename": "node-v24.22.0-win-x64.zip",
+      "bytes": 37733703,
+      "sha256": "f9683a19877e12a9b167305c8db71040d812876359de21f0d2e97c3f321f80c3",
+      "kind": "node-zip",
+      "urls": [
+        "https://registry.npmmirror.com/-/binary/node/v24.22.0/node-v24.22.0-win-x64.zip",
+        "https://mirrors.huaweicloud.com/nodejs/v24.22.0/node-v24.22.0-win-x64.zip"
+      ]
+    },
+    {
+      "filename": "sharp-win32-x64-0.35.5.tgz",
+      "bytes": 8575353,
+      "sha256": "16a804181ddd258ca6fe7079b2faa0c0356654c9db3d93ab0a80ec5e5161c3d4",
+      "kind": "sharp-tgz",
+      "urls": [
+        "https://mirrors.cloud.tencent.com/npm/@img/sharp-win32-x64/-/sharp-win32-x64-0.35.5.tgz",
+        "https://repo.huaweicloud.com/repository/npm/@img/sharp-win32-x64/-/sharp-win32-x64-0.35.5.tgz"
+      ]
+    },
+    {
+      "kind": "overlay-zip",
+      "filename": "runtime-overlay-868a2e2d986b8f4c-r1.zip",
+      "bytes": 320290,
+      "sha256": "64bf6d774db07f7a6812958fbb9f354bf40e2540826a3c82d85822ed61f1efa1",
+      "urls": [
+        "https://gitee.com/weizhiOWO/quicker-actions/raw/main/psflow/0.7.0/runtime-overlay-868a2e2d986b8f4c-r1.zip",
+        "https://raw.githubusercontent.com/weizhi123sdo/quicker-dist/main/psflow/0.7.0/runtime-overlay-868a2e2d986b8f4c-r1.zip"
+      ]
+    }
+  ]
+}

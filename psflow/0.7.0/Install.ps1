@@ -16,7 +16,7 @@ Set-StrictMode -Version Latest
 # This process-only path restores OS cmdlets without depending on PATH tools.
 $env:PSModulePath = (Join-Path $PSHOME 'Modules') + [IO.Path]::PathSeparator + $env:PSModulePath
 # Filled by build-distribution.py. This descriptor is pinned into both entrypoints.
-$release = [Text.Encoding]::UTF8.GetString([Convert]::FromBase64String('ewogICJzY2hlbWEiOiAicHNmbG93YnJpZGdlLmRpc3RyaWJ1dGlvbi8xIiwKICAidmVyc2lvbiI6ICIwLjcuMCIsCiAgImJhc2VVcmwiOiAiaHR0cHM6Ly9naXRodWIuY29tL3dlaXpoaTEyM3Nkby9xdWlja2VyLWRpc3QvcmVsZWFzZXMvZG93bmxvYWQvcHNmbG93LXYwLjcuMC8iLAogICJjb21wYW5pb24iOiB7CiAgICAic2NoZW1hIjogInBzZmxvd2JyaWRnZS5jb21wYW5pb24vMSIsCiAgICAicHJvZHVjdElkIjogIlBTRmxvd0JyaWRnZSIsCiAgICAicHJvdG9jb2xWZXJzaW9uIjogMSwKICAgICJzdXBwb3J0ZWRQcm90b2NvbCI6IHsKICAgICAgIm1pbiI6IDEsCiAgICAgICJtYXgiOiAxCiAgICB9LAogICAgIm1haW5BY3Rpb25TaGFyZUNvZGUiOiAiYTJkZTMzMGYtZGYwYi00MTJhLWJhMzItNDgzODNlM2MwNTVjIiwKICAgICJtYW5hZ2VyQWN0aW9uU2hhcmVDb2RlIjogImRjZGU0NDAzLWM2ZjItNGQ4MC04MjMxLWMwNzNlMjUwNGE3MSIKICB9LAogICJhcHAiOiB7CiAgICAiYnVpbGRJZCI6ICJkNjU5MjgwMjQ5NTNjZmM2IiwKICAgICJmaWxlbmFtZSI6ICJQU0Zsb3dCcmlkZ2UtUXVpY2tlci0wLjcuMC1kNjU5MjgwMjQ5NTNjZmM2LnppcCIsCiAgICAiYnl0ZXMiOiAzNjU1MjcsCiAgICAic2hhMjU2IjogImQ2NTkyODAyNDk1M2NmYzY0OGVhZjNmZjQ3YjJkYjY5Yzk1YjcyYTI2N2U4Zjk4MTg0MzNhNmM4NDQ1ZTNmMjIiLAogICAgIm1hbmlmZXN0U2hhMjU2IjogIjYwNjgyZmJhZjJkMzhiYzNlZmYwN2E3MTM5NGFiMmQ0MTFmMTBhNzg0ZWM3YjM0MTlkMWJkODI1NDc0ODc5NDEiCiAgfSwKICAicnVudGltZSI6IHsKICAgICJwYWNrYWdlRm9ybWF0IjogMywKICAgICJydW50aW1lSWQiOiAid2luLXg2NC1ub2RlMjQuMjIuMC04NjhhMmUyZDk4NmI4ZjRjLXIxIiwKICAgICJub2RlVmVyc2lvbiI6ICIyNC4yMi4wIiwKICAgICJkZXBlbmRlbmN5RmluZ2VycHJpbnQiOiAiODY4YTJlMmQ5ODZiOGY0YzBhYzQ4MThmMzM2YTI4ODA5YzY4YjQ4NTZmMjRhNTM1ODBhZGM2ZWQzMjA2OTc5OCIsCiAgICAiZmlsZW5hbWUiOiAicnVudGltZS13aW4teDY0LW5vZGUyNC4yMi4wLTg2OGEyZTJkOTg2YjhmNGMtcjEuemlwIiwKICAgICJieXRlcyI6IDQzNzc0MjQwLAogICAgInNoYTI1NiI6ICI4ODQ0MzQyMGM1MGQ2NDYzNGMxNDFkZjI1ODA1OWMzNzFiNDQwZWI3NmExYWNjZmRmYTJiNjRmZWNjZTg3MTNlIiwKICAgICJmaWxlc01hbmlmZXN0U2hhMjU2IjogImM4ZjBmYjU0ZDRkNmVhZDUxYzQyZGUxNDYzOGQ3MDI2NGIzZThiODhmOWIyN2JlNTA0ODM3NjA5NWZhZTcxMTgiLAogICAgInNvdXJjZVNoYTI1NiI6ICI1NGMxOTA2ZjcyNTk1ZWM5NGI4NWM0Y2E1ZDVlZTY0YjQyNzRmNTJjYTliY2ZkNGZhMjE4MWZlYjQzYzdjMjE3IiwKICAgICJ1cmwiOiAiaHR0cHM6Ly9naXRodWIuY29tL3dlaXpoaTEyM3Nkby9xdWlja2VyLWRpc3QvcmVsZWFzZXMvZG93bmxvYWQvcHNmbG93LXJ1bnRpbWUtbm9kZTI0LjIyLjAtc2hhcnAwLjM1LjUtcjEvcnVudGltZS13aW4teDY0LW5vZGUyNC4yMi4wLTg2OGEyZTJkOTg2YjhmNGMtcjEuemlwIgogIH0sCiAgImxvY2FsQmFja2VuZCI6IHsKICAgICJzY2hlbWEiOiAicHNmbG93YnJpZGdlLmxvY2FsLWJhY2tlbmQvMSIsCiAgICAicnVudGltZUlkIjogIndpbmRvd3MteDY0LWNweXRob24tMy4xMC4xMS1mbG93Y2xpLTEuMC4wIiwKICAgICJweXRob25WZXJzaW9uIjogIjMuMTAuMTEiLAogICAgImZpbGVuYW1lIjogImxvY2FsLWJhY2tlbmQtd2luZG93cy14NjQuemlwIiwKICAgICJieXRlcyI6IDM5MTY3MDIxNywKICAgICJzaGEyNTYiOiAiMmIyYjRiOWRlNWZhOGZmNGVkZmEyM2I0ZGRjYzI1N2ViMmM1NzZlZTYwZGU5ZWRlNTZhNDYwNGZiNzJlNTI0MSIsCiAgICAiZmlsZXNNYW5pZmVzdFNoYTI1NiI6ICI5YTY3ZmFjYzBiNjNjYmQ5Mjk1MzdkN2RmYWJkOWYyNjQ2ZWUxZjI1N2EwNjYwNzk5NTFkOTQzYjZlMTI5YmU4IiwKICAgICJmaWxlQ291bnQiOiAxNjY3LAogICAgImV4cGFuZGVkQnl0ZXMiOiA5MDgxNzI2MTIsCiAgICAic291cmNlIjogewogICAgICAidXBzdHJlYW1SZXBvIjogImh0dHBzOi8vZ2l0aHViLmNvbS9jZG0xNjg4OC9mbG93LWltYWdlLWNsaS1sb2NhbC1hcGkuZ2l0IiwKICAgICAgInVwc3RyZWFtQ29tbWl0IjogIjMyMzU0NTg1OGM3NzgzMjBiYTc1N2UxODBhMDQ5ODQ5OTNlMzJiZDMiLAogICAgICAidXBzdHJlYW1BdXRob3IiOiAiY2RtMTY4ODgiLAogICAgICAidXBzdHJlYW1MaWNlbnNlIjogIk1JVCIsCiAgICAgICJjcHl0aG9uRW1iZWRVcmwiOiAiaHR0cHM6Ly93d3cucHl0aG9uLm9yZy9mdHAvcHl0aG9uLzMuMTAuMTEvcHl0aG9uLTMuMTAuMTEtZW1iZWQtYW1kNjQuemlwIiwKICAgICAgImNweXRob25FbWJlZFNoYTI1NiI6ICI2MDg2MTlmODYxOTA3NTYyOWM5YzY5ZjM2MTM1MmEwZGE2ZWQ3ZTYyZjgzYTBlMTljNjNlMGVhMzJlYjc2MjlkIiwKICAgICAgInJ1bnRpbWVCdWlsZElkIjogImEzYmNiMWE2OGY1MmFlODgwNjJlNzViOGQ4OTQwY2Y1YzEwNjRmNjgyNTc5MDk3NTJmZDc5ODIyMDBmMTA0NDYiLAogICAgICAicGF0Y2hDb3VudCI6IDcsCiAgICAgICJ3aGVlbENvdW50IjogMjUKICAgIH0sCiAgICAiYm9vdHN0cmFwQ29udHJhY3QiOiB7CiAgICAgICJydW50aW1lU3ViZGlyIjogInJ1bnRpbWUvZmxvdy1hcGkiLAogICAgICAicHl0aG9uUGF0aCI6ICJydW50aW1lL2Zsb3ctYXBpLy52ZW52L1NjcmlwdHMvcHl0aG9uLmV4ZSIsCiAgICAgICJlbnRyeU1vZHVsZSI6ICJmbG93X2NsaS5hcGlfc2VydmVyIiwKICAgICAgImRlZmF1bHRBcmdzIjogWwogICAgICAgICItbSIsCiAgICAgICAgImZsb3dfY2xpLmFwaV9zZXJ2ZXIiLAogICAgICAgICItLWhvc3QiLAogICAgICAgICIxMjcuMC4wLjEiLAogICAgICAgICItLXBvcnQiLAogICAgICAgICI4Nzg3IgogICAgICBdLAogICAgICAicmVxdWlyZWRFbnYiOiB7CiAgICAgICAgIlBMQVlXUklHSFRfQlJPV1NFUlNfUEFUSCI6ICJ7cnVudGltZVJvb3R9Ly5sb2NhbC1icm93c2VycyIsCiAgICAgICAgIlBZVEhPTlVURjgiOiAiMSIsCiAgICAgICAgIlBZVEhPTklPRU5DT0RJTkciOiAidXRmLTgiCiAgICAgIH0KICAgIH0sCiAgICAidXJsIjogImh0dHBzOi8vZ2l0aHViLmNvbS93ZWl6aGkxMjNzZG8vcXVpY2tlci1kaXN0L3JlbGVhc2VzL2Rvd25sb2FkL3BzZmxvdy1sb2NhbC1weXRob24zMTAxMS1wbGF5d3JpZ2h0MTY0LXIxL2xvY2FsLWJhY2tlbmQtd2luZG93cy14NjQuemlwIgogIH0sCiAgIm1pcnJvcnMiOiBbCiAgICAiaHR0cHM6Ly9naXRlZS5jb20vd2VpemhpT1dPL3F1aWNrZXItYWN0aW9ucy9yYXcvbWFpbi9wc2Zsb3cvMC43LjAvIiwKICAgICJodHRwczovL2dpdGh1Yi5jb20vd2VpemhpMTIzc2RvL3F1aWNrZXItZGlzdC9yZWxlYXNlcy9kb3dubG9hZC9wc2Zsb3ctdjAuNy4wLyIKICBdCn0=')) | ConvertFrom-Json
+$release = [Text.Encoding]::UTF8.GetString([Convert]::FromBase64String('ewogICJzY2hlbWEiOiAicHNmbG93YnJpZGdlLmRpc3RyaWJ1dGlvbi8xIiwKICAidmVyc2lvbiI6ICIwLjcuMCIsCiAgImJhc2VVcmwiOiAiaHR0cHM6Ly9naXRodWIuY29tL3dlaXpoaTEyM3Nkby9xdWlja2VyLWRpc3QvcmVsZWFzZXMvZG93bmxvYWQvcHNmbG93LXYwLjcuMC8iLAogICJjb21wYW5pb24iOiB7CiAgICAic2NoZW1hIjogInBzZmxvd2JyaWRnZS5jb21wYW5pb24vMSIsCiAgICAicHJvZHVjdElkIjogIlBTRmxvd0JyaWRnZSIsCiAgICAicHJvdG9jb2xWZXJzaW9uIjogMSwKICAgICJzdXBwb3J0ZWRQcm90b2NvbCI6IHsKICAgICAgIm1pbiI6IDEsCiAgICAgICJtYXgiOiAxCiAgICB9LAogICAgIm1haW5BY3Rpb25TaGFyZUNvZGUiOiAiYTJkZTMzMGYtZGYwYi00MTJhLWJhMzItNDgzODNlM2MwNTVjIiwKICAgICJtYW5hZ2VyQWN0aW9uU2hhcmVDb2RlIjogImRjZGU0NDAzLWM2ZjItNGQ4MC04MjMxLWMwNzNlMjUwNGE3MSIKICB9LAogICJhcHAiOiB7CiAgICAiYnVpbGRJZCI6ICJkNjU5MjgwMjQ5NTNjZmM2IiwKICAgICJmaWxlbmFtZSI6ICJQU0Zsb3dCcmlkZ2UtUXVpY2tlci0wLjcuMC1kNjU5MjgwMjQ5NTNjZmM2LnppcCIsCiAgICAiYnl0ZXMiOiAzNjU1MjcsCiAgICAic2hhMjU2IjogImQ2NTkyODAyNDk1M2NmYzY0OGVhZjNmZjQ3YjJkYjY5Yzk1YjcyYTI2N2U4Zjk4MTg0MzNhNmM4NDQ1ZTNmMjIiLAogICAgIm1hbmlmZXN0U2hhMjU2IjogIjYwNjgyZmJhZjJkMzhiYzNlZmYwN2E3MTM5NGFiMmQ0MTFmMTBhNzg0ZWM3YjM0MTlkMWJkODI1NDc0ODc5NDEiCiAgfSwKICAicnVudGltZSI6IHsKICAgICJwYWNrYWdlRm9ybWF0IjogMywKICAgICJydW50aW1lSWQiOiAid2luLXg2NC1ub2RlMjQuMjIuMC04NjhhMmUyZDk4NmI4ZjRjLXIxIiwKICAgICJub2RlVmVyc2lvbiI6ICIyNC4yMi4wIiwKICAgICJkZXBlbmRlbmN5RmluZ2VycHJpbnQiOiAiODY4YTJlMmQ5ODZiOGY0YzBhYzQ4MThmMzM2YTI4ODA5YzY4YjQ4NTZmMjRhNTM1ODBhZGM2ZWQzMjA2OTc5OCIsCiAgICAiZmlsZW5hbWUiOiAicnVudGltZS13aW4teDY0LW5vZGUyNC4yMi4wLTg2OGEyZTJkOTg2YjhmNGMtcjEuemlwIiwKICAgICJieXRlcyI6IDQzNzc0MjQwLAogICAgInNoYTI1NiI6ICI4ODQ0MzQyMGM1MGQ2NDYzNGMxNDFkZjI1ODA1OWMzNzFiNDQwZWI3NmExYWNjZmRmYTJiNjRmZWNjZTg3MTNlIiwKICAgICJmaWxlc01hbmlmZXN0U2hhMjU2IjogImM4ZjBmYjU0ZDRkNmVhZDUxYzQyZGUxNDYzOGQ3MDI2NGIzZThiODhmOWIyN2JlNTA0ODM3NjA5NWZhZTcxMTgiLAogICAgInNvdXJjZVNoYTI1NiI6ICI1NGMxOTA2ZjcyNTk1ZWM5NGI4NWM0Y2E1ZDVlZTY0YjQyNzRmNTJjYTliY2ZkNGZhMjE4MWZlYjQzYzdjMjE3IiwKICAgICJ1cmwiOiAiaHR0cHM6Ly9naXRodWIuY29tL3dlaXpoaTEyM3Nkby9xdWlja2VyLWRpc3QvcmVsZWFzZXMvZG93bmxvYWQvcHNmbG93LXJ1bnRpbWUtbm9kZTI0LjIyLjAtc2hhcnAwLjM1LjUtcjEvcnVudGltZS13aW4teDY0LW5vZGUyNC4yMi4wLTg2OGEyZTJkOTg2YjhmNGMtcjEuemlwIiwKICAgICJjb21wb25lbnRzIjogWwogICAgICB7CiAgICAgICAgImZpbGVuYW1lIjogIm5vZGUtdjI0LjIyLjAtd2luLXg2NC56aXAiLAogICAgICAgICJieXRlcyI6IDM3NzMzNzAzLAogICAgICAgICJzaGEyNTYiOiAiZjk2ODNhMTk4NzdlMTJhOWIxNjczMDVjOGRiNzEwNDBkODEyODc2MzU5ZGUyMWYwZDJlOTdjM2YzMjFmODBjMyIsCiAgICAgICAgImtpbmQiOiAibm9kZS16aXAiLAogICAgICAgICJ1cmxzIjogWwogICAgICAgICAgImh0dHBzOi8vcmVnaXN0cnkubnBtbWlycm9yLmNvbS8tL2JpbmFyeS9ub2RlL3YyNC4yMi4wL25vZGUtdjI0LjIyLjAtd2luLXg2NC56aXAiLAogICAgICAgICAgImh0dHBzOi8vbWlycm9ycy5odWF3ZWljbG91ZC5jb20vbm9kZWpzL3YyNC4yMi4wL25vZGUtdjI0LjIyLjAtd2luLXg2NC56aXAiCiAgICAgICAgXQogICAgICB9LAogICAgICB7CiAgICAgICAgImZpbGVuYW1lIjogInNoYXJwLXdpbjMyLXg2NC0wLjM1LjUudGd6IiwKICAgICAgICAiYnl0ZXMiOiA4NTc1MzUzLAogICAgICAgICJzaGEyNTYiOiAiMTZhODA0MTgxZGRkMjU4Y2E2ZmU3MDc5YjJmYWEwYzAzNTY2NTRjOWRiM2Q5M2FiMGE4MGVjNWU1MTYxYzNkNCIsCiAgICAgICAgImtpbmQiOiAic2hhcnAtdGd6IiwKICAgICAgICAidXJscyI6IFsKICAgICAgICAgICJodHRwczovL21pcnJvcnMuY2xvdWQudGVuY2VudC5jb20vbnBtL0BpbWcvc2hhcnAtd2luMzIteDY0Ly0vc2hhcnAtd2luMzIteDY0LTAuMzUuNS50Z3oiLAogICAgICAgICAgImh0dHBzOi8vcmVwby5odWF3ZWljbG91ZC5jb20vcmVwb3NpdG9yeS9ucG0vQGltZy9zaGFycC13aW4zMi14NjQvLS9zaGFycC13aW4zMi14NjQtMC4zNS41LnRneiIKICAgICAgICBdCiAgICAgIH0sCiAgICAgIHsKICAgICAgICAia2luZCI6ICJvdmVybGF5LXppcCIsCiAgICAgICAgImZpbGVuYW1lIjogInJ1bnRpbWUtb3ZlcmxheS04NjhhMmUyZDk4NmI4ZjRjLXIxLnppcCIsCiAgICAgICAgImJ5dGVzIjogMzIwMjkwLAogICAgICAgICJzaGEyNTYiOiAiNjRiZjZkNzc0ZGIwN2Y3YTY4MTI5NThmYmI5ZjM1NGJmNDBlMjU0MDgyNmEzYzgyZDg1ODIyZWQ2MWYxZWZhMSIsCiAgICAgICAgInVybHMiOiBbCiAgICAgICAgICAiaHR0cHM6Ly9naXRlZS5jb20vd2VpemhpT1dPL3F1aWNrZXItYWN0aW9ucy9yYXcvbWFpbi9wc2Zsb3cvMC43LjAvcnVudGltZS1vdmVybGF5LTg2OGEyZTJkOTg2YjhmNGMtcjEuemlwIiwKICAgICAgICAgICJodHRwczovL3Jhdy5naXRodWJ1c2VyY29udGVudC5jb20vd2VpemhpMTIzc2RvL3F1aWNrZXItZGlzdC9tYWluL3BzZmxvdy8wLjcuMC9ydW50aW1lLW92ZXJsYXktODY4YTJlMmQ5ODZiOGY0Yy1yMS56aXAiCiAgICAgICAgXQogICAgICB9CiAgICBdCiAgfSwKICAibG9jYWxCYWNrZW5kIjogewogICAgInNjaGVtYSI6ICJwc2Zsb3dicmlkZ2UubG9jYWwtYmFja2VuZC8xIiwKICAgICJydW50aW1lSWQiOiAid2luZG93cy14NjQtY3B5dGhvbi0zLjEwLjExLWZsb3djbGktMS4wLjAiLAogICAgInB5dGhvblZlcnNpb24iOiAiMy4xMC4xMSIsCiAgICAiZmlsZW5hbWUiOiAibG9jYWwtYmFja2VuZC13aW5kb3dzLXg2NC56aXAiLAogICAgImJ5dGVzIjogMzkxNjcwMjE3LAogICAgInNoYTI1NiI6ICIyYjJiNGI5ZGU1ZmE4ZmY0ZWRmYTIzYjRkZGNjMjU3ZWIyYzU3NmVlNjBkZTllZGU1NmE0NjA0ZmI3MmU1MjQxIiwKICAgICJmaWxlc01hbmlmZXN0U2hhMjU2IjogIjlhNjdmYWNjMGI2M2NiZDkyOTUzN2Q3ZGZhYmQ5ZjI2NDZlZTFmMjU3YTA2NjA3OTk1MWQ5NDNiNmUxMjliZTgiLAogICAgImZpbGVDb3VudCI6IDE2NjcsCiAgICAiZXhwYW5kZWRCeXRlcyI6IDkwODE3MjYxMiwKICAgICJzb3VyY2UiOiB7CiAgICAgICJ1cHN0cmVhbVJlcG8iOiAiaHR0cHM6Ly9naXRodWIuY29tL2NkbTE2ODg4L2Zsb3ctaW1hZ2UtY2xpLWxvY2FsLWFwaS5naXQiLAogICAgICAidXBzdHJlYW1Db21taXQiOiAiMzIzNTQ1ODU4Yzc3ODMyMGJhNzU3ZTE4MGEwNDk4NDk5M2UzMmJkMyIsCiAgICAgICJ1cHN0cmVhbUF1dGhvciI6ICJjZG0xNjg4OCIsCiAgICAgICJ1cHN0cmVhbUxpY2Vuc2UiOiAiTUlUIiwKICAgICAgImNweXRob25FbWJlZFVybCI6ICJodHRwczovL3d3dy5weXRob24ub3JnL2Z0cC9weXRob24vMy4xMC4xMS9weXRob24tMy4xMC4xMS1lbWJlZC1hbWQ2NC56aXAiLAogICAgICAiY3B5dGhvbkVtYmVkU2hhMjU2IjogIjYwODYxOWY4NjE5MDc1NjI5YzljNjlmMzYxMzUyYTBkYTZlZDdlNjJmODNhMGUxOWM2M2UwZWEzMmViNzYyOWQiLAogICAgICAicnVudGltZUJ1aWxkSWQiOiAiYTNiY2IxYTY4ZjUyYWU4ODA2MmU3NWI4ZDg5NDBjZjVjMTA2NGY2ODI1NzkwOTc1MmZkNzk4MjIwMGYxMDQ0NiIsCiAgICAgICJwYXRjaENvdW50IjogNywKICAgICAgIndoZWVsQ291bnQiOiAyNQogICAgfSwKICAgICJib290c3RyYXBDb250cmFjdCI6IHsKICAgICAgInJ1bnRpbWVTdWJkaXIiOiAicnVudGltZS9mbG93LWFwaSIsCiAgICAgICJweXRob25QYXRoIjogInJ1bnRpbWUvZmxvdy1hcGkvLnZlbnYvU2NyaXB0cy9weXRob24uZXhlIiwKICAgICAgImVudHJ5TW9kdWxlIjogImZsb3dfY2xpLmFwaV9zZXJ2ZXIiLAogICAgICAiZGVmYXVsdEFyZ3MiOiBbCiAgICAgICAgIi1tIiwKICAgICAgICAiZmxvd19jbGkuYXBpX3NlcnZlciIsCiAgICAgICAgIi0taG9zdCIsCiAgICAgICAgIjEyNy4wLjAuMSIsCiAgICAgICAgIi0tcG9ydCIsCiAgICAgICAgIjg3ODciCiAgICAgIF0sCiAgICAgICJyZXF1aXJlZEVudiI6IHsKICAgICAgICAiUExBWVdSSUdIVF9CUk9XU0VSU19QQVRIIjogIntydW50aW1lUm9vdH0vLmxvY2FsLWJyb3dzZXJzIiwKICAgICAgICAiUFlUSE9OVVRGOCI6ICIxIiwKICAgICAgICAiUFlUSE9OSU9FTkNPRElORyI6ICJ1dGYtOCIKICAgICAgfQogICAgfSwKICAgICJ1cmwiOiAiaHR0cHM6Ly9naXRodWIuY29tL3dlaXpoaTEyM3Nkby9xdWlja2VyLWRpc3QvcmVsZWFzZXMvZG93bmxvYWQvcHNmbG93LWxvY2FsLXB5dGhvbjMxMDExLXBsYXl3cmlnaHQxNjQtcjEvbG9jYWwtYmFja2VuZC13aW5kb3dzLXg2NC56aXAiCiAgfSwKICAibWlycm9ycyI6IFsKICAgICJodHRwczovL2dpdGVlLmNvbS93ZWl6aGlPV08vcXVpY2tlci1hY3Rpb25zL3Jhdy9tYWluL3BzZmxvdy8wLjcuMC8iLAogICAgImh0dHBzOi8vZ2l0aHViLmNvbS93ZWl6aGkxMjNzZG8vcXVpY2tlci1kaXN0L3JlbGVhc2VzL2Rvd25sb2FkL3BzZmxvdy12MC43LjAvIgogIF0KfQ==')) | ConvertFrom-Json
 if (-not $Root) { $Root = Join-Path $env:LOCALAPPDATA 'PSFlowBridge' }
 $Root = [IO.Path]::GetFullPath($Root)
 $appsDir = Join-Path $Root 'apps'
@@ -171,7 +171,7 @@ function ValidArchive([string]$File,$Artifact) {
 }
 function DownloadArtifact([Uri]$Download,$Temporary,$Artifact,[long]$ArtifactBytes,[int]$GlobalStart,[int]$GlobalEnd) {
   $request = [Net.HttpWebRequest]::Create($Download)
-  $request.Timeout = 120000; $request.ReadWriteTimeout = 45000
+  $request.Timeout = 12000; $request.ReadWriteTimeout = 12000
   $request.UserAgent = 'PSFlowBridge-Installer'
   Now 'download' ('Downloading ' + $Artifact.filename + ' from ' + $Download.Host + ' (0 MB / ' + [math]::Round($ArtifactBytes/1MB,1) + ' MB)') 0 $GlobalStart $GlobalEnd
   try { $response = $request.GetResponse() }
@@ -194,15 +194,15 @@ function DownloadArtifact([Uri]$Download,$Temporary,$Artifact,[long]$ArtifactByt
       $inputStream = $response.GetResponseStream()
       if (Test-Path -LiteralPath $Temporary) { Remove-Item -LiteralPath $Temporary -Force }
       $outputStream = [IO.File]::Create($Temporary)
-      $buffer = New-Object byte[] 65536; [long]$received = 0; $lastReport = [long]0
+      $buffer = New-Object byte[] 65536; [long]$received = 0; $lastReport = [long]0; $heartbeat = [Diagnostics.Stopwatch]::StartNew(); $elapsed = [Diagnostics.Stopwatch]::StartNew()
       while (($read = $inputStream.Read($buffer,0,$buffer.Length)) -gt 0) {
         $received += $read
         if ($received -gt $ArtifactBytes) { return 'Download exceeds its pinned size.' }
-        if ($received - $lastReport -ge 4MB) {
-          $lastReport = $received
+        if ($received - $lastReport -ge 1MB -or $heartbeat.ElapsedMilliseconds -ge 800) {
+          $lastReport = $received; $heartbeat.Restart()
           $percent = [int][math]::Floor(($received / $ArtifactBytes) * 100)
           if ($percent -gt 100) { $percent = 100 }
-          Now 'download' ('Downloading ' + $Artifact.filename + ' (' + [math]::Round($received/1MB,1) + ' MB / ' + [math]::Round($ArtifactBytes/1MB,1) + ' MB)') $percent $GlobalStart $GlobalEnd
+          Now 'download' ('Downloading ' + $Artifact.filename + ' (' + [math]::Round($received/1MB,1) + ' MB / ' + [math]::Round($ArtifactBytes/1MB,1) + ' MB, ' + [math]::Round($received / 1MB / [math]::Max(0.001,$elapsed.Elapsed.TotalSeconds),1) + ' MB/s)') $percent $GlobalStart $GlobalEnd
         }
         $outputStream.Write($buffer,0,$read)
       }
@@ -211,6 +211,8 @@ function DownloadArtifact([Uri]$Download,$Temporary,$Artifact,[long]$ArtifactByt
       if ($outputStream) { $outputStream.Dispose() }
       if ($inputStream) { $inputStream.Dispose() }
     }
+  } catch {
+    return ('Network stream failed or stalled: ' + $_.Exception.GetBaseException().Message)
   } finally { $response.Dispose() }
   return ''
 }
@@ -228,9 +230,14 @@ function GetArchive($Artifact,[int]$GlobalStart = 0,[int]$GlobalEnd = 100) {
       Copy-Item -LiteralPath $source -Destination $temporary
       Now 'download' ('Loaded cached ' + $Artifact.filename) 100 $GlobalStart $GlobalEnd
     } else {
-      # Try the pinned URL, then every mirror, then baseUrl. A source that
+      # Try artifact-specific sources, then the pinned URL, mirrors and baseUrl. A source that
       # returns 404/403/429 or a bad archive falls through to the next one.
       $candidates = New-Object System.Collections.Generic.List[string]
+      if ($Artifact.PSObject.Properties['urls'] -and $Artifact.urls) {
+        foreach ($candidateUrl in $Artifact.urls) {
+          if ($candidateUrl) { $candidates.Add([string]$candidateUrl) }
+        }
+      }
       if ($Artifact.PSObject.Properties['url'] -and $Artifact.url) { $candidates.Add([string]$Artifact.url) }
       if ($release.PSObject.Properties['mirrors'] -and $release.mirrors) {
         foreach ($mirror in @($release.mirrors)) {
@@ -301,6 +308,92 @@ function ExpandChecked([string]$Archive,[string]$Destination,[long]$MaxBytes,[in
     Now 'verify' ('Expanded ' + (Split-Path -Leaf $Archive) + ' (' + $expanded + ' files); verifying manifests') 99 $GlobalStart $GlobalEnd
   } finally { $zip.Dispose() }
 }
+# Included in the single-file installer by the distribution builder.
+# Each input is independently pinned; TestRuntime checks the original complete
+# runtime manifest after assembly, irrespective of the download source.
+function ExpandRuntimeComponents($Pin,[string]$Stage) {
+  $parts = @($Pin.components)
+  if ($parts.Count -ne 3) { Fail 'descriptor_invalid' 'Expected Node, native image library and runtime overlay.' }
+  [IO.Directory]::CreateDirectory($Stage) | Out-Null
+  for ($index = 0; $index -lt $parts.Count; $index++) {
+    $part = $parts[$index]
+    $start = 22 + [int](33 * $index / $parts.Count)
+    $end = 22 + [int](33 * ($index + 1) / $parts.Count)
+    $archive = GetArchive $part $start $end
+    switch ([string]$part.kind) {
+      'node-zip' {
+        $zip = [IO.Compression.ZipFile]::OpenRead($archive)
+        try {
+          foreach ($mapping in @(
+            @(('node-v' + $Pin.nodeVersion + '-win-x64/node.exe'),'node.exe'),
+            @(('node-v' + $Pin.nodeVersion + '-win-x64/LICENSE'),'licenses/Node-LICENSE.txt')
+          )) {
+            $entry = $zip.GetEntry($mapping[0])
+            if (-not $entry -or $entry.Length -gt 160MB) { Fail 'runtime_invalid' 'Missing or oversized Node component.' }
+            $target = Inside $Stage $mapping[1]
+            [IO.Directory]::CreateDirectory((Split-Path -Parent $target)) | Out-Null
+            $inputStream = $entry.Open(); $outputStream = [IO.File]::Create($target)
+            try { $inputStream.CopyTo($outputStream) } finally { $outputStream.Dispose(); $inputStream.Dispose() }
+          }
+        } finally { $zip.Dispose() }
+      }
+      'sharp-tgz' {
+        $node = Join-Path $Stage 'node.exe'
+        if (-not (Test-Path -LiteralPath $node -PathType Leaf)) { Fail 'runtime_invalid' 'Node component must be verified first.' }
+        $script = Join-Path $Stage '.extract-native.cjs'
+        # This narrow extractor accepts only regular package files and folders.
+        # No lifecycle scripts, npm installation, PATH tools or links are used.
+        $source = @'
+const fs = require('node:fs'), path = require('node:path'), zlib = require('node:zlib');
+const [archive, destination] = process.argv.slice(2);
+const base = path.resolve(destination);
+const data = zlib.gunzipSync(fs.readFileSync(archive), {maxOutputLength: 64 * 1024 * 1024});
+let offset = 0, count = 0;
+function text(start, size) { return data.subarray(start, start + size).toString('utf8').replace(/\0.*$/s, ''); }
+while (offset + 512 <= data.length) {
+  const header = data.subarray(offset, offset + 512);
+  if (header.every(byte => byte === 0)) break;
+  const rawSize = text(offset + 124, 12).trim();
+  if (!/^[0-7]+$/.test(rawSize)) throw Error('Invalid tar length');
+  const size = parseInt(rawSize, 8);
+  const checksum = text(offset + 148, 8).trim();
+  let sum = 0;
+  for (let i = 0; i < 512; i++) sum += (i >= 148 && i < 156) ? 32 : header[i];
+  if (!/^[0-7]+$/.test(checksum) || sum !== parseInt(checksum, 8)) throw Error('Invalid tar header');
+  const name = text(offset, 100), prefix = text(offset + 345, 155);
+  if (prefix || !name.startsWith('package/')) throw Error('Unsupported tar path');
+  const relative = name.slice(8);
+  if (!relative || /[\\:]/.test(relative) || relative.startsWith('/') || relative.split('/').includes('..')) throw Error('Unsafe tar path');
+  const target = path.resolve(base, relative);
+  if (!target.startsWith(base + path.sep)) throw Error('Unsafe destination');
+  const type = header[156];
+  if (type !== 0 && type !== 48 && type !== 53) throw Error('Unsupported tar entry');
+  const start = offset + 512;
+  if (start + size > data.length || ++count > 1000) throw Error('Invalid tar bounds');
+  if (type === 53) fs.mkdirSync(target, {recursive: true});
+  else { fs.mkdirSync(path.dirname(target), {recursive: true}); fs.writeFileSync(target, data.subarray(start, start + size)); }
+  offset = start + Math.ceil(size / 512) * 512;
+}
+if (!count) throw Error('Empty native package');
+'@
+        [IO.File]::WriteAllText($script,$source,$utf8)
+        $destination = Inside $Stage 'node_modules/@img/sharp-win32-x64'
+        $process = Start-Process -FilePath $node -ArgumentList @(
+          ('"' + $script + '"'),('"' + $archive + '"'),('"' + $destination + '"')
+        ) -WindowStyle Hidden -PassThru
+        try {
+          if (-not $process.WaitForExit(30000)) { $process.Kill(); Fail 'runtime_invalid' 'Native component extraction timed out.' }
+          if ($process.ExitCode -ne 0) { Fail 'runtime_invalid' 'Native component extraction failed.' }
+        } finally { $process.Dispose(); Remove-Item -LiteralPath $script -Force }
+      }
+      'overlay-zip' { ExpandChecked $archive $Stage 32MB 56 65 }
+      default { Fail 'descriptor_invalid' 'Unsupported runtime component format.' }
+    }
+  }
+  if (-not (TestRuntime $Stage $Pin)) { Fail 'runtime_invalid' 'Assembled runtime does not match the pinned original files.' }
+}
+
+
 function TestRuntime([string]$Directory,$Pin) {
   try {
     $manifestFile = Join-Path $Directory 'runtime-files.json'
@@ -1124,10 +1217,26 @@ try {
     if ($runtimeName -notmatch '^[A-Za-z0-9._-]+$') { Fail 'descriptor_invalid' 'Invalid runtime id.' }
     $runtimePath = Inside $portableDir $runtimeName
     if ($Maintenance -eq 'repair-runtime' -or -not (TestRuntime $runtimePath $release.runtime)) {
-      $archive = GetArchive $release.runtime 22 55
       $stage = Join-Path $portableDir ('.staging-' + [guid]::NewGuid().ToString('N'))
       try {
-        ExpandChecked $archive $stage 536870912 25 65
+        $assembled = $false
+        $cachedRuntime = Join-Path $Root ('downloads\' + $release.runtime.filename)
+        $offlineRuntime = if ($SourceDir) { Join-Path $SourceDir $release.runtime.filename } else { '' }
+        $hasCompleteArchive = (ValidArchive $cachedRuntime $release.runtime) -or ($offlineRuntime -and (ValidArchive $offlineRuntime $release.runtime))
+        if (-not $hasCompleteArchive -and $release.runtime.PSObject.Properties['components']) {
+          try {
+            ExpandRuntimeComponents $release.runtime $stage
+            $assembled = $true
+          } catch {
+            $componentError = $_.Exception.Message
+            RemoveStage $stage $portableDir
+            Now 'download' ('Component route failed; trying complete runtime: ' + $componentError) 22
+          }
+        }
+        if (-not $assembled) {
+          $archive = GetArchive $release.runtime 22 55
+          ExpandChecked $archive $stage 536870912 25 65
+        }
         if (-not (TestRuntime $stage $release.runtime)) { Fail 'runtime_invalid' 'Staged runtime integrity failed.' }
         if (Test-Path -LiteralPath $runtimePath) { $runtimeName += '-repair-' + [guid]::NewGuid().ToString('N'); $runtimePath = Inside $portableDir $runtimeName }
         [IO.Directory]::Move($stage,$runtimePath)
