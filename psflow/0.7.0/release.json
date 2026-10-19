@@ -1,0 +1,80 @@
+{
+  "schema": "psflowbridge.distribution/1",
+  "version": "0.7.0",
+  "baseUrl": "https://github.com/weizhi123sdo/quicker-dist/releases/download/psflow-v0.7.0/",
+  "companion": {
+    "schema": "psflowbridge.companion/1",
+    "productId": "PSFlowBridge",
+    "protocolVersion": 1,
+    "supportedProtocol": {
+      "min": 1,
+      "max": 1
+    },
+    "mainActionShareCode": "a2de330f-df0b-412a-ba32-48383e3c055c",
+    "managerActionShareCode": "dcde4403-c6f2-4d80-8231-c073e2504a71"
+  },
+  "app": {
+    "buildId": "d65928024953cfc6",
+    "filename": "PSFlowBridge-Quicker-0.7.0-d65928024953cfc6.zip",
+    "bytes": 365527,
+    "sha256": "d65928024953cfc648eaf3ff47b2db69c95b72a267e8f9818433a6c8445e3f22",
+    "manifestSha256": "60682fbaf2d38bc3eff07a71394ab2d411f10a784ec7b3419d1bd82547487941"
+  },
+  "runtime": {
+    "packageFormat": 3,
+    "runtimeId": "win-x64-node24.22.0-868a2e2d986b8f4c-r1",
+    "nodeVersion": "24.22.0",
+    "dependencyFingerprint": "868a2e2d986b8f4c0ac4818f336a28809c68b4856f24a53580adc6ed32069798",
+    "filename": "runtime-win-x64-node24.22.0-868a2e2d986b8f4c-r1.zip",
+    "bytes": 43774240,
+    "sha256": "88443420c50d64634c141df258059c371b440eb76a1accfdfa2b64fecce8713e",
+    "filesManifestSha256": "c8f0fb54d4d6ead51c42de14638d70264b3e8b88f9b27be5048376095fae7118",
+    "sourceSha256": "54c1906f72595ec94b85c4ca5d5ee64b4274f52ca9bcfd4fa2181feb43c7c217",
+    "url": "https://github.com/weizhi123sdo/quicker-dist/releases/download/psflow-runtime-node24.22.0-sharp0.35.5-r1/runtime-win-x64-node24.22.0-868a2e2d986b8f4c-r1.zip"
+  },
+  "localBackend": {
+    "schema": "psflowbridge.local-backend/1",
+    "runtimeId": "windows-x64-cpython-3.10.11-flowcli-1.0.0",
+    "pythonVersion": "3.10.11",
+    "filename": "local-backend-windows-x64.zip",
+    "bytes": 391670217,
+    "sha256": "2b2b4b9de5fa8ff4edfa23b4ddcc257eb2c576ee60de9ede56a4604fb72e5241",
+    "filesManifestSha256": "9a67facc0b63cbd929537d7dfabd9f2646ee1f257a066079951d943b6e129be8",
+    "fileCount": 1667,
+    "expandedBytes": 908172612,
+    "source": {
+      "upstreamRepo": "https://github.com/cdm16888/flow-image-cli-local-api.git",
+      "upstreamCommit": "323545858c778320ba757e180a04984993e32bd3",
+      "upstreamAuthor": "cdm16888",
+      "upstreamLicense": "MIT",
+      "cpythonEmbedUrl": "https://www.python.org/ftp/python/3.10.11/python-3.10.11-embed-amd64.zip",
+      "cpythonEmbedSha256": "608619f8619075629c9c69f361352a0da6ed7e62f83a0e19c63e0ea32eb7629d",
+      "runtimeBuildId": "a3bcb1a68f52ae88062e75b8d8940cf5c1064f68257909752fd7982200f10446",
+      "patchCount": 7,
+      "wheelCount": 25
+    },
+    "bootstrapContract": {
+      "runtimeSubdir": "runtime/flow-api",
+      "pythonPath": "runtime/flow-api/.venv/Scripts/python.exe",
+      "entryModule": "flow_cli.api_server",
+      "defaultArgs": [
+        "-m",
+        "flow_cli.api_server",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "8787"
+      ],
+      "requiredEnv": {
+        "PLAYWRIGHT_BROWSERS_PATH": "{runtimeRoot}/.local-browsers",
+        "PYTHONUTF8": "1",
+        "PYTHONIOENCODING": "utf-8"
+      }
+    },
+    "url": "https://github.com/weizhi123sdo/quicker-dist/releases/download/psflow-local-python31011-playwright164-r1/local-backend-windows-x64.zip"
+  },
+  "mirrors": [
+    "https://gitee.com/weizhiOWO/quicker-actions/raw/main/psflow/0.7.0/",
+    "https://github.com/weizhi123sdo/quicker-dist/releases/download/psflow-v0.7.0/"
+  ]
+}
