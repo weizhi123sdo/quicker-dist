@@ -22,7 +22,23 @@ variables:
     default: false
   - key: htmlPath
     varType: text
+  - key: webViewInstalled
+    varType: boolean
+    default: false
 steps:
+  - webview2:
+      type: CheckInstalled
+      outputs:
+        isInstalled: webViewInstalled
+  - if:
+      condition: '$=!{webViewInstalled}'
+      then:
+        - stop:
+            method: forcestop
+            isError: true
+            showMessage: '未安装 Microsoft Edge WebView2 运行时，无法打开 PS Flow 组件准备窗口。请先安装 WebView2 Evergreen Runtime：https://developer.microsoft.com/microsoft-edge/webview2/，完成后重新运行本动作。'
+      else:
+        - comment: '兼容旧版分支'
   - csscript:
       mode: normal_roslyn
       script: |-
