@@ -39,5 +39,61 @@
         "https://raw.githubusercontent.com/weizhi123sdo/quicker-dist/main/psflow/0.7.0/runtime-overlay-868a2e2d986b8f4c-r1.zip"
       ]
     }
+  ],
+  "parts": [
+    {
+      "filename": "88443420c50d6463-part-000.bin",
+      "bytes": 8388608,
+      "sha256": "c3166bfdf46d7ec45585dc1782a8b76f4ceb8d2610f90680ec044695ea85c269",
+      "urls": [
+        "https://gitee.com/weizhiOWO/quicker-actions/raw/main/psflow/0.7.0/artifact-parts/88443420c50d6463/88443420c50d6463-part-000.bin",
+        "https://raw.githubusercontent.com/weizhi123sdo/quicker-dist/main/psflow/0.7.0/artifact-parts/88443420c50d6463/88443420c50d6463-part-000.bin"
+      ]
+    },
+    {
+      "filename": "88443420c50d6463-part-001.bin",
+      "bytes": 8388608,
+      "sha256": "d3ea2115caff3fa6c7ebd696bcbdfd38c39c00739a12b39ab3c5d18b55493662",
+      "urls": [
+        "https://gitee.com/weizhiOWO/quicker-actions/raw/main/psflow/0.7.0/artifact-parts/88443420c50d6463/88443420c50d6463-part-001.bin",
+        "https://raw.githubusercontent.com/weizhi123sdo/quicker-dist/main/psflow/0.7.0/artifact-parts/88443420c50d6463/88443420c50d6463-part-001.bin"
+      ]
+    },
+    {
+      "filename": "88443420c50d6463-part-002.bin",
+      "bytes": 8388608,
+      "sha256": "4071d5ee6f57086936a92ab236efd1e65f1930a7adbfecd2d381fa9c2ca6620d",
+      "urls": [
+        "https://gitee.com/weizhiOWO/quicker-actions/raw/main/psflow/0.7.0/artifact-parts/88443420c50d6463/88443420c50d6463-part-002.bin",
+        "https://raw.githubusercontent.com/weizhi123sdo/quicker-dist/main/psflow/0.7.0/artifact-parts/88443420c50d6463/88443420c50d6463-part-002.bin"
+      ]
+    },
+    {
+      "filename": "88443420c50d6463-part-003.bin",
+      "bytes": 8388608,
+      "sha256": "66903bc5e87202ef7de90446653d2f05e747df680a5d0afe7a49f47a6fa727e8",
+      "urls": [
+        "https://gitee.com/weizhiOWO/quicker-actions/raw/main/psflow/0.7.0/artifact-parts/88443420c50d6463/88443420c50d6463-part-003.bin",
+        "https://raw.githubusercontent.com/weizhi123sdo/quicker-dist/main/psflow/0.7.0/artifact-parts/88443420c50d6463/88443420c50d6463-part-003.bin"
+      ]
+    },
+    {
+      "filename": "88443420c50d6463-part-004.bin",
+      "bytes": 8388608,
+      "sha256": "9d4c90487afac274540a728d57667cf6bd43cd15c525f2b3ac698d06887a3b86",
+      "urls": [
+        "https://gitee.com/weizhiOWO/quicker-actions/raw/main/psflow/0.7.0/artifact-parts/88443420c50d6463/88443420c50d6463-part-004.bin",
+        "https://raw.githubusercontent.com/weizhi123sdo/quicker-dist/main/psflow/0.7.0/artifact-parts/88443420c50d6463/88443420c50d6463-part-004.bin"
+      ]
+    },
+    {
+      "filename": "88443420c50d6463-part-005.bin",
+      "bytes": 1831200,
+      "sha256": "1da69365945112d1495bf6be34f96973d3a3dcfb248bd97c50df0759ba5aae11",
+      "urls": [
+        "https://gitee.com/weizhiOWO/quicker-actions/raw/main/psflow/0.7.0/artifact-parts/88443420c50d6463/88443420c50d6463-part-005.bin",
+        "https://raw.githubusercontent.com/weizhi123sdo/quicker-dist/main/psflow/0.7.0/artifact-parts/88443420c50d6463/88443420c50d6463-part-005.bin"
+      ]
+    }
   ]
 }
