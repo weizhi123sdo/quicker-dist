@@ -243,7 +243,7 @@ function GetArchive($Artifact,[int]$GlobalStart = 0,[int]$GlobalEnd = 100) {
           return $cache
         } catch {
           $partsError = $_.Exception.Message
-          Now 'download' ('Segment route failed; trying complete archive: ' + $partsError) -1
+          Fail 'download_failed' ('Segment route failed for ' + $Artifact.filename + ': ' + $partsError + '. Verified segments are kept; run the action again to resume without downloading the full archive.')
         }
       }
       # Try artifact-specific sources, then the pinned URL, mirrors and baseUrl. A source that
@@ -350,7 +350,22 @@ function DownloadArchiveParts($Artifact,[string]$Temporary,[int]$GlobalStart,[in
   foreach ($name in @('Fail','Hash','ValidArchive','DownloadArtifact','GetArchive')) {
     $source += 'function ' + $name + ' {' + (Get-Item ('Function:\' + $name)).Definition + "}`n"
   }
-  $source += 'function Now {}' + "`n" + 'GetArchive $Artifact'
+  $source += 'function Now {}' + "`n"
+  $source += @'
+function GetArchiveWithSegmentRetry($Segment) {
+  $lastError = ''
+  for ($attempt = 0; $attempt -lt 3; $attempt++) {
+    try { return GetArchive $Segment }
+    catch {
+      $lastError = $_.Exception.Message
+      if ($lastError -match 'descriptor_invalid|artifact_corrupt|download_url_invalid') { break }
+      if ($attempt -lt 2) { Start-Sleep -Seconds (1 + (2 * $attempt)) }
+    }
+  }
+  Fail 'download_failed' ('Segment retry exhausted: ' + $lastError)
+}
+GetArchiveWithSegmentRetry $Artifact
+'@
   $pool = [RunspaceFactory]::CreateRunspacePool(1,3)
   $jobs = New-Object System.Collections.Generic.List[object]
   $paths = New-Object string[] $parts.Count
