@@ -118,7 +118,7 @@ steps:
               {
                   var data = System.IO.Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData), "PSFlowBridge");
                   var setupFile = System.IO.Path.Combine(data, "setup.json");
-                  var requested = context.GetVarValue<string>("quicker_in_param", "") ?? "";
+                  var requested = ((string)(context.GetVarValue("quicker_in_param") ?? "")) ?? "";
                   context.SetVarValue("needsSetup", false);
                   context.SetVarValue("setupChoice", "");
                   context.SetVarValue("installMode", "");
@@ -230,12 +230,12 @@ steps:
                         script: |-
                           public static object Exec(Quicker.Public.IStepContext context)
                           {
-                              var success = context.GetVarValue<bool>("installerSuccess", false);
-                              var output = (context.GetVarValue<string>("installerOutput", "") ?? "").Trim();
-                              var title = (context.GetVarValue<string>("installerActionTitle", "") ?? "").Trim();
+                              var success = ((bool)(context.GetVarValue("installerSuccess") ?? (object)false));
+                              var output = (((string)(context.GetVarValue("installerOutput") ?? "")) ?? "").Trim();
+                              var title = (((string)(context.GetVarValue("installerActionTitle") ?? "")) ?? "").Trim();
                               var share = "https://getquicker.net/Sharedaction?code=dcde4403-c6f2-4d80-8231-c073e2504a71";
                               var expectedBuildId = "d65928024953cfc6";
-                              var requestId = (context.GetVarValue<string>("setupRequestId", "") ?? "").Trim();
+                              var requestId = (((string)(context.GetVarValue("setupRequestId") ?? "")) ?? "").Trim();
                               if (requestId.Length != 51 || !requestId.StartsWith("req-firstrun-local-")) {
                                   throw new System.Exception("本次首次设置缺少请求标识，未执行安装。请关闭窗口后重新打开助手。");
                               }
@@ -350,9 +350,9 @@ steps:
             script: |-
               public static object Exec(Quicker.Public.IStepContext context)
               {
-                  var raw=context.GetVarValue<string>("uiProbe");
+                  var raw=((string)context.GetVarValue("uiProbe"));
                   var snapshot=Newtonsoft.Json.Linq.JObject.Parse(raw);
-                  var expectedPanel=System.IO.Path.GetFullPath(System.IO.Path.Combine(context.GetVarValue<string>("legacyRoot"),"action-ui","panel.html"));
+                  var expectedPanel=System.IO.Path.GetFullPath(System.IO.Path.Combine(((string)context.GetVarValue("legacyRoot")),"action-ui","panel.html"));
                   System.Uri oldPanel;
                   if(!System.Uri.TryCreate((string)snapshot["url"],System.UriKind.Absolute,out oldPanel)||!oldPanel.IsFile||!string.Equals(System.IO.Path.GetFullPath(oldPanel.LocalPath),expectedPanel,System.StringComparison.OrdinalIgnoreCase))throw new System.Exception("原面板位置不匹配，未迁移或覆盖用户数据。");
                   var values=snapshot["values"] as Newtonsoft.Json.Linq.JObject;
@@ -367,7 +367,7 @@ steps:
                     try {
                       try{acquired=migrationLock.WaitOne(5000);}catch(System.Threading.AbandonedMutexException){acquired=true;}
                       if(!acquired)throw new System.Exception("用户设置迁移正在进行，请稍后重开助手。");
-                      var expected=context.GetVarValue<string>("migrationRevision")??"";
+                      var expected=((string)context.GetVarValue("migrationRevision"))??"";
                       var exists=System.IO.File.Exists(file);
                       if(exists&&expected.Length==0)return true;
                       long revision=0;
@@ -441,23 +441,23 @@ steps:
             context.SetVarValue("installRunning",false);
             context.SetVarValue("installDone",false);
             var operation="";
-            try { operation=context.GetVarValue<string>("op","")??""; } catch { }
-            if(string.IsNullOrEmpty(operation)){try{operation=context.GetVarValue<string>("maintenance","")??"";}catch{}}
+            try { operation=((string)(context.GetVarValue("op") ?? ""))??""; } catch { }
+            if(string.IsNullOrEmpty(operation)){try{operation=((string)(context.GetVarValue("maintenance") ?? ""))??"";}catch{}}
             if(operation=="install")operation="";
             var validOps=new System.Collections.Generic.HashSet<string>{
                 "","inspect","install-local","repair-runtime","rollback-app","clear-cache","remove-local","uninstall-runtime","delete-user-data","remove-components"
             };
             if(!validOps.Contains(operation))throw new System.Exception("维护操作无效："+operation);
             var installMode="";
-            try { installMode=context.GetVarValue<string>("installMode","")??""; } catch { }
-            if(string.IsNullOrEmpty(installMode)){try{installMode=context.GetVarValue<string>("mode","")??"";}catch{}}
+            try { installMode=((string)(context.GetVarValue("installMode") ?? ""))??""; } catch { }
+            if(string.IsNullOrEmpty(installMode)){try{installMode=((string)(context.GetVarValue("mode") ?? ""))??"";}catch{}}
             if(installMode!=""&&installMode!="browser"&&installMode!="local")throw new System.Exception("运行方式无效。");
             var expectedBuildId="";
-            try { expectedBuildId=context.GetVarValue<string>("expectedBuildId","")??""; } catch { }
+            try { expectedBuildId=((string)(context.GetVarValue("expectedBuildId") ?? ""))??""; } catch { }
             var requestId="";
-            try { requestId=context.GetVarValue<string>("requestId","")??""; } catch { }
+            try { requestId=((string)(context.GetVarValue("requestId") ?? ""))??""; } catch { }
             var confirmDelete=false;
-            try { confirmDelete=context.GetVarValue<bool>("confirmDeleteData",false); } catch { }
+            try { confirmDelete=((bool)(context.GetVarValue("confirmDeleteData") ?? false)); } catch { }
             var statusFile=System.IO.Path.Combine(System.IO.Path.GetTempPath(),"psfb-distribution-"+System.Guid.NewGuid().ToString("N")+".json");
             var outerProgressFile=System.Environment.GetEnvironmentVariable("PSFB_INSTALL_PROGRESS_FILE");
             var progressFile=!string.IsNullOrEmpty(outerProgressFile)?outerProgressFile:System.IO.Path.Combine(System.IO.Path.GetTempPath(),"psfb-install-progress-"+System.Guid.NewGuid().ToString("N")+".json");
@@ -717,8 +717,8 @@ steps:
       script: |-
         public static object Exec(Quicker.Public.IStepContext context)
         {
-            if (string.IsNullOrEmpty(context.GetVarValue<string>("setupChoice", ""))) return true;
-            var selected = context.GetVarValue<string>("installMode", "");
+            if (string.IsNullOrEmpty(((string)(context.GetVarValue("setupChoice") ?? "")))) return true;
+            var selected = ((string)(context.GetVarValue("installMode") ?? ""));
             if (selected != "browser" && selected != "local") throw new System.Exception("运行方式未确认，未保存首次设置。");
             var data = System.IO.Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData), "PSFlowBridge");
             var config = Newtonsoft.Json.Linq.JObject.Parse(System.IO.File.ReadAllText(System.IO.Path.Combine(data, "config.json")));
@@ -752,7 +752,7 @@ steps:
                     try { acquired = mutex.WaitOne(5000); } catch (System.Threading.AbandonedMutexException) { acquired = true; }
                     if (!acquired) throw new System.Exception("另一个首次设置正在保存，请稍后再试。");
                     var current = System.IO.File.Exists(file) ? System.IO.File.ReadAllText(file) : "";
-                    if (current != (context.GetVarValue<string>("setupExpected", "") ?? "")) throw new System.Exception("另一个窗口已更新首次设置，请重新打开助手。");
+                    if (current != (((string)(context.GetVarValue("setupExpected") ?? "")) ?? "")) throw new System.Exception("另一个窗口已更新首次设置，请重新打开助手。");
                     var snapshot = new Newtonsoft.Json.Linq.JObject { ["schemaVersion"] = 1, ["completed"] = true, ["mode"] = selected, ["updatedAt"] = System.DateTime.UtcNow.ToString("o") };
                     var temporary = file + "." + System.Guid.NewGuid().ToString("N") + ".tmp";
                     try {
@@ -1019,9 +1019,9 @@ steps:
             public static object Exec(Quicker.Public.IStepContext context)
             {
                 string operation = "setup";
-                try { operation = context.GetVarValue<string>("operation") ?? "setup"; } catch { }
+                try { operation = ((string)context.GetVarValue("operation")) ?? "setup"; } catch { }
                 bool setup = operation == "setup";
-                string handleText = setup ? context.GetVarValue<string>("panelWindow") : context.ReadState("panelWindow", null);
+                string handleText = setup ? ((string)context.GetVarValue("panelWindow")) : context.ReadState("panelWindow", null);
                 long handle;
                 if (!long.TryParse(handleText, out handle) || handle == 0) throw new System.Exception("面板窗口尚未就绪。");
                 var hwnd = GetAncestor(new System.IntPtr(handle), 2);
@@ -1164,7 +1164,7 @@ subPrograms:
           script: |-
             public static object Exec(Quicker.Public.IStepContext context)
             {
-                var operation=context.GetVarValue<string>("operation");
+                var operation=((string)context.GetVarValue("operation"));
                 if(operation!="repair-runtime"&&operation!="rollback-app"&&operation!="install-local")throw new System.Exception("维护操作无效，未修改运行环境。");
                 return true;
             }
@@ -1181,7 +1181,7 @@ subPrograms:
           script: |-
             public static object Exec(Quicker.Public.IStepContext context)
             {
-                var started=context.GetVarValue<bool>("restarted");
+                var started=((bool)context.GetVarValue("restarted"));
                 context.SetVarValue("response",new Newtonsoft.Json.Linq.JObject{["ok"]=started,["requested"]=started,["error"]=started?null:"维护动作未能启动，请关闭多余助手窗口后重试。"}.ToString(Newtonsoft.Json.Formatting.None));
                 return true;
             }
@@ -1204,7 +1204,7 @@ subPrograms:
           script: |-
             public static object Exec(Quicker.Public.IStepContext context)
             {
-                context.SetVarValue("response",new Newtonsoft.Json.Linq.JObject{["ok"]=context.GetVarValue<bool>("restarted")}.ToString(Newtonsoft.Json.Formatting.None));
+                context.SetVarValue("response",new Newtonsoft.Json.Linq.JObject{["ok"]=((bool)context.GetVarValue("restarted"))}.ToString(Newtonsoft.Json.Formatting.None));
                 return true;
             }
   - name: PsFlowManagedOpen
@@ -1242,7 +1242,7 @@ subPrograms:
             {
                 var view=context.GetVarValue("managedView");
                 if(view==null)throw new System.Exception("内置 Flow 窗口未打开。");
-                var operation=context.GetVarValue<string>("operation")??"show";
+                var operation=((string)context.GetVarValue("operation"))??"show";
                 bool visible=false;
                 var dispatcher=(System.Windows.Threading.Dispatcher)view.GetType().GetProperty("Dispatcher").GetValue(view);
                 dispatcher.Invoke(new System.Action(()=>{
@@ -1277,7 +1277,7 @@ subPrograms:
           script: |-
             public static object Exec(Quicker.Public.IStepContext context)
             {
-                var request=Newtonsoft.Json.Linq.JObject.Parse(context.GetVarValue<string>("request"));
+                var request=Newtonsoft.Json.Linq.JObject.Parse(((string)context.GetVarValue("request")));
                 var dataRoot=System.IO.Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData),"PSFlowBridge");
                 using(var gate=new System.Threading.Mutex(false,@"Local\PSFlowBridge.ManagedFlow")) {
                  bool owned=false;
@@ -1780,7 +1780,7 @@ subPrograms:
                     request.ReadWriteTimeout = 90000;
                     request.ContentType = "application/json; charset=utf-8";
                     request.Headers["Authorization"] = "Bearer " + token;
-                    var bytes = new System.Text.UTF8Encoding(false).GetBytes(context.GetVarValue<string>("request"));
+                    var bytes = new System.Text.UTF8Encoding(false).GetBytes(((string)context.GetVarValue("request")));
                     request.ContentLength = bytes.Length;
                     using (var stream = request.GetRequestStream()) stream.Write(bytes, 0, bytes.Length);
                     using (var response = request.GetResponse())
@@ -1851,7 +1851,7 @@ subPrograms:
                 // Bridge the Quicker WebView2 Flow session into the local Playwright profile.
                 var result = new Newtonsoft.Json.Linq.JObject { ["ok"] = false, ["message"] = "" };
                 try {
-                    var cookies = context.GetVarValue<string>("cookies") ?? "";
+                    var cookies = ((string)context.GetVarValue("cookies")) ?? "";
                     if (string.IsNullOrWhiteSpace(cookies)) throw new System.Exception("内嵌登录窗口未返回登录 Cookie（若重复出现，说明该窗口没有带出 Cookie，请重试登录）。");
                     var stateRoot = System.IO.Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData), "PSFlowBridge");
                     var backendPath = System.IO.Path.Combine(stateRoot, "backend.json");
@@ -1927,7 +1927,7 @@ subPrograms:
                 // Bridge the Quicker WebView2 Flow session into the local Playwright profile.
                 var result = new Newtonsoft.Json.Linq.JObject { ["ok"] = false, ["message"] = "" };
                 try {
-                    var cookies = context.GetVarValue<string>("cookies") ?? "";
+                    var cookies = ((string)context.GetVarValue("cookies")) ?? "";
                     if (string.IsNullOrWhiteSpace(cookies)) throw new System.Exception("内嵌登录窗口未返回登录 Cookie（若重复出现，说明该窗口没有带出 Cookie，请重试登录）。");
                     var stateRoot = System.IO.Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData), "PSFlowBridge");
                     var backendPath = System.IO.Path.Combine(stateRoot, "backend.json");
@@ -2210,9 +2210,9 @@ subPrograms:
                 public static object Exec(Quicker.Public.IStepContext context)
                 {
                     string operation = "setup";
-                    try { operation = context.GetVarValue<string>("operation") ?? "setup"; } catch { }
+                    try { operation = ((string)context.GetVarValue("operation")) ?? "setup"; } catch { }
                     bool setup = operation == "setup";
-                    string handleText = setup ? context.GetVarValue<string>("panelWindow") : context.ReadState("panelWindow", null);
+                    string handleText = setup ? ((string)context.GetVarValue("panelWindow")) : context.ReadState("panelWindow", null);
                     long handle;
                     if (!long.TryParse(handleText, out handle) || handle == 0) throw new System.Exception("面板窗口尚未就绪。");
                     var hwnd = GetAncestor(new System.IntPtr(handle), 2);
@@ -2352,7 +2352,7 @@ subPrograms:
           script: |-
             public static object Exec(Quicker.Public.IStepContext context)
             {
-                var operation=context.GetVarValue<string>("operation");
+                var operation=((string)context.GetVarValue("operation"));
                 if(operation!="open"&&operation!="copy")throw new System.Exception("链接操作无效。");
                 var url="https://getquicker.net/Sharedaction?code=dcde4403-c6f2-4d80-8231-c073e2504a71";
                 System.Windows.Clipboard.SetText(url);

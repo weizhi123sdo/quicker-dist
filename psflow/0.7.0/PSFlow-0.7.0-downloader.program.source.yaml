@@ -36,7 +36,7 @@ steps:
 
             var inParam = "";
             try {
-                inParam = (context.GetVarValue<string>("quicker_in_param") ?? "").Trim();
+                inParam = ((string)(context.GetVarValue("quicker_in_param") ?? "")).Trim();
             } catch { }
 
             var dataRoot = System.IO.Path.Combine(System.Environment.GetFolderPath(System.Environment.SpecialFolder.LocalApplicationData), "PSFlowBridge");
@@ -143,10 +143,10 @@ steps:
             script: |-
               public static object Exec(Quicker.Public.IStepContext context)
               {
-                  var resp = context.GetVarValue<string>("response") ?? "";
+                  var resp = ((string)context.GetVarValue("response")) ?? "";
                   var err = "组件准备未完成或用户取消。";
                   var cancelled = false;
-                  var cancelledFlag = false; try { cancelledFlag = context.GetVarValue<bool>("cancelled"); } catch { }
+                  var cancelledFlag = false; try { cancelledFlag = ((bool)context.GetVarValue("cancelled")); } catch { }
                   try {
                     if (!string.IsNullOrEmpty(resp)) {
                       var j = Newtonsoft.Json.Linq.JObject.Parse(resp);
@@ -256,21 +256,21 @@ subPrograms:
 
                 // Hoisted shared parameters and protocol identity action (available to both try and catch)
                 var selectedMode = "";
-                try { selectedMode = context.GetVarValue<string>("mode") ?? ""; } catch { }
+                try { selectedMode = ((string)context.GetVarValue("mode")) ?? ""; } catch { }
                 if (string.IsNullOrEmpty(selectedMode)) {
-                    try { selectedMode = context.GetVarValue<string>("installMode", "") ?? ""; } catch { }
+                    try { selectedMode = ((string)(context.GetVarValue("installMode") ?? "")) ?? ""; } catch { }
                 }
 
                 var requestIdInput = "";
-                try { requestIdInput = context.GetVarValue<string>("requestId") ?? ""; } catch { }
+                try { requestIdInput = ((string)context.GetVarValue("requestId")) ?? ""; } catch { }
 
                 var mOp = "";
                 try {
-                    mOp = (context.GetVarValue<string>("op") ?? "").Trim();
+                    mOp = (((string)context.GetVarValue("op")) ?? "").Trim();
                 } catch { }
                 if (string.IsNullOrEmpty(mOp)) {
                     try {
-                        mOp = (context.GetVarValue<string>("maintenance") ?? "").Trim();
+                        mOp = (((string)context.GetVarValue("maintenance")) ?? "").Trim();
                     } catch { }
                 }
                 var wrapperValidOps = new System.Collections.Generic.HashSet<string>(new [] {
@@ -351,23 +351,23 @@ subPrograms:
                         context.SetVarValue("installRunning",false);
                         context.SetVarValue("installDone",false);
                         var operation="";
-                        try { operation=context.GetVarValue<string>("op","")??""; } catch { }
-                        if(string.IsNullOrEmpty(operation)){try{operation=context.GetVarValue<string>("maintenance","")??"";}catch{}}
+                        try { operation=((string)(context.GetVarValue("op") ?? ""))??""; } catch { }
+                        if(string.IsNullOrEmpty(operation)){try{operation=((string)(context.GetVarValue("maintenance") ?? ""))??"";}catch{}}
                         if(operation=="install")operation="";
                         var validOps=new System.Collections.Generic.HashSet<string>{
                             "","inspect","install-local","repair-runtime","rollback-app","clear-cache","remove-local","uninstall-runtime","delete-user-data","remove-components"
                         };
                         if(!validOps.Contains(operation))throw new System.Exception("维护操作无效："+operation);
                         var installMode="";
-                        try { installMode=context.GetVarValue<string>("installMode","")??""; } catch { }
-                        if(string.IsNullOrEmpty(installMode)){try{installMode=context.GetVarValue<string>("mode","")??"";}catch{}}
+                        try { installMode=((string)(context.GetVarValue("installMode") ?? ""))??""; } catch { }
+                        if(string.IsNullOrEmpty(installMode)){try{installMode=((string)(context.GetVarValue("mode") ?? ""))??"";}catch{}}
                         if(installMode!=""&&installMode!="browser"&&installMode!="local")throw new System.Exception("运行方式无效。");
                         var expectedBuildId="";
-                        try { expectedBuildId=context.GetVarValue<string>("expectedBuildId","")??""; } catch { }
+                        try { expectedBuildId=((string)(context.GetVarValue("expectedBuildId") ?? ""))??""; } catch { }
                         var requestId="";
-                        try { requestId=context.GetVarValue<string>("requestId","")??""; } catch { }
+                        try { requestId=((string)(context.GetVarValue("requestId") ?? ""))??""; } catch { }
                         var confirmDelete=false;
-                        try { confirmDelete=context.GetVarValue<bool>("confirmDeleteData",false); } catch { }
+                        try { confirmDelete=((bool)(context.GetVarValue("confirmDeleteData") ?? false)); } catch { }
                         var statusFile=System.IO.Path.Combine(System.IO.Path.GetTempPath(),"psfb-distribution-"+System.Guid.NewGuid().ToString("N")+".json");
                         var outerProgressFile=System.Environment.GetEnvironmentVariable("PSFB_INSTALL_PROGRESS_FILE");
                         var progressFile=!string.IsNullOrEmpty(outerProgressFile)?outerProgressFile:System.IO.Path.Combine(System.IO.Path.GetTempPath(),"psfb-install-progress-"+System.Guid.NewGuid().ToString("N")+".json");
@@ -638,7 +638,7 @@ subPrograms:
                     try { if (System.IO.File.Exists(downloaderProgressFile)) System.IO.File.Delete(downloaderProgressFile); } catch { }
 
                     // 4. Retrieve raw installerResult from A / installer status and pass through strictly
-                    var rawInstallerResult = context.GetVarValue<string>("installerResult") ?? "";
+                    var rawInstallerResult = ((string)context.GetVarValue("installerResult")) ?? "";
                     Newtonsoft.Json.Linq.JObject structured = null;
                     try {
                         if (!string.IsNullOrEmpty(rawInstallerResult)) {
@@ -688,7 +688,7 @@ subPrograms:
                     diag["phase"] = phaseText;
                     diag["progressFile"] = downloaderProgressFile;
 
-                    var rawInstallerResult = context.GetVarValue<string>("installerResult") ?? "";
+                    var rawInstallerResult = ((string)context.GetVarValue("installerResult")) ?? "";
                     Newtonsoft.Json.Linq.JObject errObj = null;
                     try {
                         if (!string.IsNullOrEmpty(rawInstallerResult)) {

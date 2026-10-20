@@ -30,23 +30,23 @@ using(var mutex=new System.Threading.Mutex(false,"Local\\PSFlowBridgeInstallerSo
 context.SetVarValue("installRunning",false);
 context.SetVarValue("installDone",false);
 var operation="";
-try { operation=context.GetVarValue<string>("op","")??""; } catch { }
-if(string.IsNullOrEmpty(operation)){try{operation=context.GetVarValue<string>("maintenance","")??"";}catch{}}
+try { operation=((string)(context.GetVarValue("op") ?? ""))??""; } catch { }
+if(string.IsNullOrEmpty(operation)){try{operation=((string)(context.GetVarValue("maintenance") ?? ""))??"";}catch{}}
 if(operation=="install")operation="";
 var validOps=new System.Collections.Generic.HashSet<string>{
     "","inspect","install-local","repair-runtime","rollback-app","clear-cache","remove-local","uninstall-runtime","delete-user-data","remove-components"
 };
 if(!validOps.Contains(operation))throw new System.Exception("维护操作无效："+operation);
 var installMode="";
-try { installMode=context.GetVarValue<string>("installMode","")??""; } catch { }
-if(string.IsNullOrEmpty(installMode)){try{installMode=context.GetVarValue<string>("mode","")??"";}catch{}}
+try { installMode=((string)(context.GetVarValue("installMode") ?? ""))??""; } catch { }
+if(string.IsNullOrEmpty(installMode)){try{installMode=((string)(context.GetVarValue("mode") ?? ""))??"";}catch{}}
 if(installMode!=""&&installMode!="browser"&&installMode!="local")throw new System.Exception("运行方式无效。");
 var expectedBuildId="";
-try { expectedBuildId=context.GetVarValue<string>("expectedBuildId","")??""; } catch { }
+try { expectedBuildId=((string)(context.GetVarValue("expectedBuildId") ?? ""))??""; } catch { }
 var requestId="";
-try { requestId=context.GetVarValue<string>("requestId","")??""; } catch { }
+try { requestId=((string)(context.GetVarValue("requestId") ?? ""))??""; } catch { }
 var confirmDelete=false;
-try { confirmDelete=context.GetVarValue<bool>("confirmDeleteData",false); } catch { }
+try { confirmDelete=((bool)(context.GetVarValue("confirmDeleteData") ?? false)); } catch { }
 var statusFile=System.IO.Path.Combine(System.IO.Path.GetTempPath(),"psfb-distribution-"+System.Guid.NewGuid().ToString("N")+".json");
 var outerProgressFile=System.Environment.GetEnvironmentVariable("PSFB_INSTALL_PROGRESS_FILE");
 var progressFile=!string.IsNullOrEmpty(outerProgressFile)?outerProgressFile:System.IO.Path.Combine(System.IO.Path.GetTempPath(),"psfb-install-progress-"+System.Guid.NewGuid().ToString("N")+".json");
