@@ -1,0 +1,8 @@
+{
+  "schema": "psflowbridge.latest/1",
+  "productId": "PSFlowBridge",
+  "channel": "stable",
+  "version": "0.7.3",
+  "buildId": "16091fc21828426c",
+  "mainActionShareCode": "a2de330f-df0b-412a-ba32-48383e3c055c"
+}
